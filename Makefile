@@ -1,8 +1,6 @@
 RSYNC=$(shell pwd)/sync.sh
-SITEUSER=rjhala@login.eng.ucsd.edu
-SITEPATH=/cse/htdocs/classes/wi15/cse230-a
-remotehost=login.eng.ucsd.edu
-remotedir=/cse/htdocs/classes/wi15/cse230-a
+SITEUSER=heades@alonzo.metatheorem.org
+SITEPATH=/home/heades/www/metatheorem.org/public_html/courses/3300-PLC
 
 PANDOCHANDOUT=pandoc --highlight-style=tango --from=markdown+lhs --chapters --latex-engine=pdflatex --template=templates/handout.latex --filter templates/inside.hs
 
@@ -16,19 +14,15 @@ all: website
 	cp -p -r slides _site/
 	cp homeworks/*.lhs _site/homeworks/
 	cp final/*.lhs _site/final/
-	
+
 website: src/Site.hs
 	stack build
 
 clean:
 	rm -rf *.hi *.o .*.swp .*.swo website _site/ _cache/
 
-rsync:
-	$(RSYNC) _site/ $(remoteuser) $(remotehost) $(remotedir)
-
-update: build
+update: all
 	scp -r _site/* $(SITEUSER):$(SITEPATH)
-	ssh $(SITEUSER) "chmod -R g+w $(SITEPATH) && chmod -R ugo+r $(SITEPATH)"
 
 slides:
 	cd slides && make && cd ..
