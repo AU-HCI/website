@@ -1,6 +1,7 @@
-Website for CSE230
-==================
+Website for CSCI:3300
+======================
 
+* This site is based on Ranjit Jhala's site for his graduate PL course: See https://github.com/UCSD-PL/230-web
 
 To build, make sure you install [stack](https://github.com/commercialhaskell/stack/blob/master/doc/install_and_upgrade.md)
 
