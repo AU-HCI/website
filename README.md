@@ -21,7 +21,7 @@ To *delete* all temporary files:
 make clean
 ```
 
-To *update* the webpage remotely (FIXME):
+To *build* and *update* the webpage remotely:
 
 ```
 make update
@@ -42,7 +42,7 @@ then add a link to it in
 
 and then do
 
-	make && make update
+	make update
 
 The analogous instructions apply to create a new homework.
 
@@ -60,7 +60,7 @@ src/Site.hs
 
 and then do
 
-	make && make update
+	make update
 
 Todo
 ----
