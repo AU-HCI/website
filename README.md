@@ -32,7 +32,7 @@ make update
 Add new lectures or homeworks
 -----------------------------
 
-To add a new lecture, create the new file
+To add a new Haskell lecture, create the new file
 
 	lectures/lec-XXX.lhs
 
@@ -46,9 +46,24 @@ and then do
 
 The analogous instructions apply to create a new homework.
 
+To add a new Theory lecture, create the new lecture dir under:
+
+	lectures/theory/XXXX
+
+then add LaTex to that dir followed by adding a link to the PDF in 
+
+	lectures.markdown 
+
+then add a match and copy directive in
+
+src/Site.hs
+
+and then do
+
+	make && make update
+
 Todo
 ----
 
-Auto-generate Lectures and Homeworks (and the links) 
-from directories.
+Get stack to build the theory lectures before copying them to _site.
 
