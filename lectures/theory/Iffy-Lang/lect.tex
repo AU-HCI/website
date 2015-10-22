@@ -1,0 +1,1060 @@
+\documentclass{article}
+\usepackage{parskip}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{mathpartir}
+\usepackage{qtree}
+
+\include{Iffy-ott}
+\include{type-theory_inc}
+
+\title{Lecture: Syntax, Inference Rules, and Our First Example
+  PL\\Programming Languages (CSCI 3300)\vspace{-22px}}
+\author{Prof. Harley Eades (heades@gru.edu).}  \date{\vspace{-22px}}
+\begin{document}
+\maketitle  
+
+\section{Introduction to the course}
+\label{sec:introduction}
+Programming languages (PLs) are ubiquitous in computer science.  Any
+student of computation has used some programming language whether they
+a computer scientist, software engineer, or information
+technologist. This then implies that the PLs are the most important
+artifacts in the computational sciences.
+
+One would find it hard to argue that PLs are important, but one could
+argue that we already have a lot of PLs, and it seems as if these are
+enough, but is this true?  I claim that it is not the case.
+Computational devices are ubiquitous in our society.  They power our
+power plants, our water supply, virtually every consumer product is
+built using some computational device, in addition they power our
+automobiles, our air planes, and our medical devies.  It is safe to
+say that we put our vary lives in the hands of computational devices,
+which implies that we put our lives in the hands of the programmers
+who designed the software systems powering such devies.  What happens
+when a software bug finds its way into the safety critical devices
+that we depend on so dearly?
+
+In 2010 there were a approximately a hundred reports made to the
+National Highway Traffic Safety Administration of potential problems
+with the braking system of the 2010 Toyota Prius \cite{Consumer:2010}.
+The problem was that the anti-lock braking system would experience a
+``short delay'' when the brakes where pressed by the driver of the
+vehicle \cite{thedetroitbureau.com:2009}.  This actually caused some
+crashes.  \textbf{Toyota found that this short delay was the result of
+  a software bug, and was able to repair the the vehicles using a
+  software update} \cite{Reuters:2009}.  Another incident where
+substantial harm was caused was in 2002 where two planes collided over
+\"{U}berlingen in Germany. A cargo plane operated by DHL collided with
+a passenger flight holding fifty-one passengers.  Air-traffic control
+did not notice the intersecting traffic until less than a minute
+before the collision occurred.  Furthermore, the on-board collision
+detection system did not alert the pilots until seconds before the
+collision.  It was officially ruled by the German Federal Bureau of
+Aircraft Accidents Investigation that the \textbf{on-board collision
+  detection software was indeed faulty} \cite{Collision:2004}.
+
+Avi Rubin is a professor at John Hopkins university and has recently
+shown that pacemakers can be remotely hacked.  It may come to the
+surprise to computer scientists, but pacemakers have wifi access now.
+Avi has shown that this connection can be indeed hacked, and could be
+used by the attacker to cause a fatal heart attack.  These hacks are
+indeed due to software vulnerabilities -- that is bugs.  
+
+How can we prevent these disastrous problems?  Currently, we using
+testing.  Programmers come up with a huge number of test inputs to a
+program, and then they run the program on each one of these tests.  If
+the program behaves across all the tests, then we consider the program
+as being correct.  Does this catch all bugs?  No!  In fact, no amount
+of testing could ever \textbf{prove} the absence of all bugs!  If the
+programmer is not clever enough, then they could indeed miss some
+corner case.  This is evident in the examples above.  So is it
+possible to be sure a program contains no bugs?  The only way to be
+sure a program contains no bugs is by mathematically proving that it
+meets some specification.  Every programmer uses some criteria to
+write a program, and a programs specification corresponds to this
+criteria transformed into a list of mathematical formulas.  Then if
+one can prove that these formulas are all true with respect to the
+program, then one can be sure with mathematical certainty that it is
+correct.  That is bug free.  The joy of this approach is that if one
+of the formulas cannot be proven, then a bug exists.  Furthermore,
+this implies that the bug would be found during development instead of
+in production.  So for example, the Toyota Prius bug in the breaking
+system would have been found before all those crashes, and costly
+recalls.  So why is it the case that companies use testing instead of
+mathematical proof?  The reason is that current programming languages
+are not amendable to mathematical proofs.  There are just to many
+complex interactions.
+
+Lets consider an example.  Suppose I say a function \verb|squared|
+takes in an \verb|int| and outputs an \verb|int|, then we know
+something about \verb|squared|, we know that if we take and apply it
+to, say, \verb|2|, then we know that it will give us back an
+\verb|int|, perhaps, \verb|4|.  Is it guaranteed that this is all it
+does?  Suppose we are given the \verb|squared| function and it is
+written in C\# do we know that it does nothing more than compute some
+integer?  The answer is most definitely no.  In C\# the function
+\verb|squared| could ask for some user input, print data to the
+screen, and even make some network transactions or ask for the time of
+day.  Hidden effects like these are all called \textbf{side effects}.
+So in a programming language like C\#, C, C++, Java, PHP, Python, and
+many more mainstream PLs we cannot really be sure what \verb|squared|
+is doing.  Thus making it very difficult to reason about these
+programs.  So can we fix this problem?  Can we design a PL that is
+more amendable to mathematical reasoning?
+
+I claim -- as do many other PL researchers -- that we can prevent
+software bugs by mathematical reasoning by adopting new more
+rigorously studied programming languages.  In fact, designing these
+types of PLs is the very driving force of modern day PL research.  To
+design these types of programming languages we must revisit the very
+foundations of programming languages, and rebuild from the ground up.
+It turns out that by adopting the notion of a pure strongly typed PL
+we can rule out a large number of software bugs during development
+without using testing, and before lives are taken!
+
+A pure strongly typed PL is one in which there are either no side
+effects at all or all side effects are accounted for in the type
+system.  Consider the \verb|squared| function again.  The type of this
+function can be written as $\verb|int| \to \verb|int|$ which means
+taken an \verb|int| as input, and then return an \verb|int| as output.
+Now suppose \verb|squared| prints out some data to the screen, then in
+a pure strongly typed PL the type becomes $\verb|int| \to
+\verb|IO(int)|$.  Here \verb|IO(int)| means the function returns an
+\verb|int| and conducts some input-output effect.  This allows us to
+take into account side effects when reasoning about the program.  So
+how does all this work?  Well that is part of the topic of this
+course.
+
+Another part of the major topic of this course is on pure strongly
+typed \textbf{functional} PLs.  Functional programming languages
+differ from the PLs like C\# or Java by having a mathematical
+foundation.  The sole datatype is a function, and in fact, the only
+thing a functional PL contains are functions.  It turns out that we
+can do a lot with this paradigm.  PLs like C\#, Java, and C are known
+as imperative and object oriented languages.  These have a foundation
+in an actual machine like a Turing Machine, while, functional PLs have
+their foundation in mathematics.  However, it turns out that they are
+equivalent in power.  One major part of this course is to understand
+the design and implementation of functional PLs.  Functional
+programming languages are also great for exploring different design
+features, and we will use them to study features like parametric
+polymorphism, and recursion.  By the end of this course each student
+will understand how different each PL can be, and be able to better
+differentiate between the various PLs when choosing one for a
+particular project.
+
+So a natural question is then is this all theoretical?  What baring
+does any of this have on the real world?  A lot!  The industry is
+already taking steps to push the old style of programming out, and
+adopt new PLs that are highly motivated by the pure strongly typed
+functional PLs.  A great example is Apple's new PL called Swift.  They
+have decided to completely abandon all Objective C code from all their
+IOS devices.  Swift is based on strongly typed functional programming
+because of its brevity of code, and the strong correctness guarantees.
+Another example, is Mozilla's Rust programming language which is a
+systems programming language which is designed for speed.  A final
+example is the Haskell programming language.  Haskell has paved the
+way for functional programming language research and much of the
+features of Swift and Rust where first studied in Haskell, and Haskell
+is used in the industry, especially, the financial sector.  Lastly,
+Haskell is the last major topic of this course.
+% section introduction (end)
+
+\section{Grammars}
+\label{sec:grammars}
+The human interface to computational devices are PLs, but the
+interface to PLs is syntax.  So how to we formally define the syntax
+of programming languages?  We use a mathematical device called a
+grammar.  Now instead of going into the fascinating area of formal
+language theory -- which is where grammars were studied extensively --
+we will instead focus on several examples to learn how grammars work.
+
+We can consider the syntax of programming languages to represent a
+formal language.  A formal language is a set words generated from a
+set of symbols.  Now consider the question, how can we generate all of
+these words?  This is the very goal of a grammar.
+
+Consider the set $L_{\text{even}} = \{
+aa,aaaa,aaaaaa,aaaaaaaa,aaaaaaaaaa,aaaaaaaaaaaa,\ldots\}$.  This set
+can be more compactly described as $\{w \,|\, w = a^{2(n+1)} \text{
+  for } n \in \mathbb{N}\}$ where $\mathbb{N}$ is the set of natural
+numbers, or the set $\{0,1,2,3,4,5,6,\ldots\}$.  So as we discussed
+above, the set $L_{\text{even}}$ is a language, but what language?  It
+is the language where all words are generated from the single symbol
+$a$, and where each word contains an even number of $a$'s.  Now a
+grammar for this language looks like the following:
+\begin{center}
+  \begin{math}
+    \begin{array}{|lll|}
+      \hline
+      \color{red}{S} & \to & \color{blue}{a}\color{red}{E}\\
+      \hline
+      \color{red}{E} & \to & \color{blue}{a}\\
+      \hline
+      \color{red}{E} & \to & \color{blue}{a}\color{red}{O}\\
+      \hline
+      \color{red}{O} & \to & \color{blue}{a}\color{red}{E}\\
+      \hline
+    \end{array}
+  \end{math}
+\end{center}
+A grammar consists of one or more productions denoted $A \to s$ where
+we call $A$ the non-terminal of the production.  Note that the
+lefthand side of a production is always a non-terminal, and not a
+composition of terminals and non-terminals.  Each production generates
+either a symbol in the language -- also called a non-terminal -- or is
+the combination of terminals (symbols of the language) and
+non-terminals.  So the righthand side of a production is a composition
+of non-terminals and terminals, but it may also only consist of
+non-terminals.  In the example above I have put boxes around each
+production, colored the non-terminals red, and the terminals blue.
+The non-terminal $S$ is a special non-terminal called the start
+non-terminal.  The start non-terminal is always used first no matter
+what.  A grammar may also have several productions associated with the
+start non-terminal.
+
+Once we have a grammar we can use it to generate any word in its
+corresponding language.  We generate words using a grammar by
+constructing a derivation.  Lets consider an example:
+\begin{center}
+  \begin{math}
+    \begin{array}{lll}
+      S & \Rightarrow & aE\\
+        & \Rightarrow & aaO\\
+        & \Rightarrow & aaaE\\
+        & \Rightarrow & aaaaO\\
+        & \Rightarrow & aaaaaE\\
+        & \Rightarrow & aaaaaaO\\
+        & \Rightarrow & aaaaaaaE\\
+        & \Rightarrow & aaaaaaaaO\\
+        & \Rightarrow & aaaaaaaaaE\\
+        & \Rightarrow & aaaaaaaaaa\\
+    \end{array}
+  \end{math}
+\end{center}
+A derivation always begins with one of the productions whose lefthand
+side is the start symbol.  Then we proceed by simply choosing one of
+the non-terminals on the lefthand side -- it does not matter which is
+chosen or in what order -- and replacing it with the lefthand side of
+one of its associated productions. We repeat this until all
+non-terminals have been replaced by terminals.  So every derivation
+ends with a word in the language the grammar generates.
+
+This is great, but now ask the question, what if we are given a word,
+say, this
+word \[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\], is
+it possible to test to see if it is in the language $L_{\text{even}}$?
+Now for our simple example we could just tally up the number of $a$'s
+and if its even, then accept, otherwise we reject the above word, but
+if this were a more complex language, like say, a PL, then that would
+not work.  It turns out that we can say, well, if there exists a
+derivation that ends with the above word, then it is a member of the
+language $L_{\text{even}}$ otherwise it is not.  In fact, there are
+known algorithms for doing just that.  In fact, this is the basic
+operation for parsers, and when using a PL you obtain a syntax error,
+the compiler took the input and tried to derive using the grammar of
+the PL.  So grammars are the driving force behind syntax, and parser
+technology.
+
+Lets consider another more interesting example:
+\begin{center}
+  \begin{math}
+    \begin{array}{llc}
+      S & \to & ()\\      
+      S & \to & (S)\\
+      S & \to & SS\\      
+    \end{array}
+  \end{math}
+\end{center}
+What language does this grammar generate?  Its the language of
+balanced parenthesis.  A few example words would then be $()$, $()()$,
+$((((((()))))))$, and $((((((()))))))()()$.  However, these are not
+words in the language generated by the above grammar: $($, $()($, and
+$(((()))))$.
+
+I would like to mention one notational convention I am using. Notice
+that if I want to have multiple productions for a symbol, like $S$ in
+the previous example, I write multiple productions with the same
+non-terminal on the lefthand side.  There is a shorthand convention
+that we will use where we combine these all into a single production.
+For example, the previous grammar can be written like this:
+\begin{center}
+  \begin{math}
+    \begin{array}{llc}
+      S & \to & () \mid (S) \mid SS\\      
+    \end{array}
+  \end{math}
+\end{center}
+Here the $\mid$ symbol should be read as ``or.''
+
+Finally, lets see how we can put all this together to formally specify
+the syntax of a programming language.  The following grammar is a
+grammar of a toy programming language:
+\begin{center}
+  \begin{math}
+    \begin{array}{rll}
+      (\text{booleans}) & b \to \mathsf{true} \mid \mathsf{false} \mid
+      b \land b \mid b \lor b \mid \lnot b \mid e > e\\
+      (\text{expressions}) & e \to 0 \mid e+1 \mid e * e \mid e + e
+      \mid e - e\\
+      (\text{command}) & S \to \mathsf{skip} \mid x := e \mid
+      \mathsf{if}\,b\,\mathsf{then}\,S\,\mathsf{else}\,S \mid
+      \mathsf{while}\,b\,\mathsf{do}\,S \\
+    \end{array}
+  \end{math}
+\end{center}
+This is slightly more complex, but the same rules we have been
+discussing above hold.  An example derivation is:
+\begin{center}
+  \begin{math}
+    \begin{array}{lllllll}
+      S & \Rightarrow & \mathsf{if}\, b\,\mathsf{then}\, S \,\mathsf{else}\, S\\
+      & \Rightarrow & \mathsf{if}\, e > e\,\mathsf{then}\, S \,\mathsf{else}\, S\\
+      & \Rightarrow & \mathsf{if}\, e + 1 > e\, \mathsf{then}\, S \,\mathsf{else}\, S\\
+      & \Rightarrow & \mathsf{if}\, 0 + 1 > e\, \mathsf{then}\, S \,\mathsf{else}\, S\\
+      & \Rightarrow & \mathsf{if}\, 0 + 1 > e + 1 \,\mathsf{then}\, S \,\mathsf{else}\, S\\
+      & \Rightarrow & \mathsf{if}\, 0 + 1 > e + 1 + 1 \,\mathsf{then}\, S \,\mathsf{else}\, S\\
+      & \Rightarrow & \mathsf{if}\, 0 + 1 > 0 + 1 + 1 \,\mathsf{then}\, S \,\mathsf{else}\, S\\
+      & \Rightarrow & \mathsf{if}\, 0 + 1 > 0 + 1 + 1 \,\mathsf{then}\, \,\mathsf{while}\, b \,\mathsf{do}\, S \,\mathsf{else}\, S\\
+      & \Rightarrow & \mathsf{if}\, 0 + 1 > 0 + 1 + 1 \,\mathsf{then}\, \,\mathsf{while}\, \mathsf{true} \,\mathsf{do}\, S \,\mathsf{else}\, S\\
+      & \Rightarrow & \mathsf{if}\, 0 + 1 > 0 + 1 + 1 \,\mathsf{then}\, \,\mathsf{while}\, \mathsf{true} \,\mathsf{do}\, \mathsf{skip} \,\mathsf{else}\, S\\
+      & \Rightarrow & \mathsf{if}\, 0 + 1 > 0 + 1 + 1 \,\mathsf{then}\, \,\mathsf{while}\, \mathsf{true} \,\mathsf{do}\, \mathsf{skip} \,\mathsf{else}\, \mathsf{skip}\\
+    \end{array}
+  \end{math}
+\end{center}
+
+At this point we have seen basically all that we will need to know
+about grammars for this course and the large majority of PL research.
+However, the previous grammar we saw for the toy PL is a bit more
+formal than we will need.  
+
+So we now look at an alternative presentation of the same grammar:
+\begin{center}
+  \begin{math}
+    \begin{array}{rll}
+      (\text{booleans}) & b ::= \mathsf{true} \mid \mathsf{false} \mid
+      b \land b \mid b \lor b \mid \lnot b \mid e > e\\
+      (\text{expressions}) & e ::= 0 \mid e+1 \mid e * e \mid e + e
+      \mid e - e\\
+      (\text{command}) & c ::= \mathsf{skip} \mid x := e \mid
+      \mathsf{if}\,b\,\mathsf{then}\,c\,\mathsf{else}\,c \mid
+      \mathsf{while}\,b\,\mathsf{do}\,c \\
+    \end{array}
+  \end{math}
+\end{center}
+This is called the Backus-Naur Form (BNF) of the formal grammar above.
+In PL we usually do not indicate a start non-terminal, but rather we
+give the grammar as a means of understanding how to derive legal
+expressions of the language.
+% section grammars (end)
+
+\section{Iffy-Lang}
+\label{sec:iffy-lang}
+In this section I would like to introduce the PL Iffy-Lang.  Its sytax
+is as follows:
+\begin{center}
+  \begin{math}
+    \begin{array}{lllllllll}
+      \text{(Bool)}  & [[b]] & ::= & [[1]] \mid [[0]] \mid [[b1 x b2]] \mid [[b1 + b2]]
+      \mid [[if b b1 b2]]\\
+    \end{array}
+  \end{math}
+\end{center}
+Now the above syntax allows us to write small programs like:
+\[ [[if b 0 1]] \] 
+However, the syntax does not describe how to actually compute
+with such programs. So how do we run them?
+
+
+The operational behavior of a program is often described by a set of
+rules called the reduction rules.  The following rules describe the
+operational behavior of Iffy-Lang:
+\begin{center}
+  \begin{mathpar}
+    \ottdruleAndTrue{} \and
+    \ottdruleAndFalseOne{} \and
+    \ottdruleAndFalseTwo{} \and
+    \ottdruleAndOne{} \and
+    \ottdruleAndTwo{} \and
+    \ottdruleOrTrue{} \and
+    \ottdruleOrTrueTwo{} \and
+    \ottdruleOrTrueOne{} \and
+    \ottdruleOrFalse{} \and
+    \ottdruleOrOne{} \and
+    \ottdruleOrTwo{} \and
+    \ottdruleIfTrue{} \and
+    \ottdruleIfFalse{} \and
+    \ottdruleIfOne{} \and
+    \ottdruleIfTwo{} \and
+    \ottdruleIfThree{}
+  \end{mathpar}
+\end{center}
+One should read these rules from the top down as an "if-statement", that is, the rule:
+\begin{center}
+  \begin{math}
+    $$\mprset{flushleft}
+    \inferrule* [right=Name] {
+      P_1
+      \\
+      \cdots
+      \\
+      P_n
+    }{C}
+  \end{math}
+\end{center}
+should be read as if $P_1, \cdots, P_n$ hold, then $C$ holds.  So for example the rule:
+\[
+\inferrule* [right=if] {
+  [[b ~> b']]
+}{[[(if b b_1 b_2) ~> (if b' b_1 b_2)]]}\\
+\]
+says, if $[[b ~> b']]$ holds, then $[[(if b b_1 b_2) ~> (if b' b_1 b_2)]]$ holds.
+
+Now the symbol $\redto$ should be read as "reduces to", hence, we read
+$[[b ~> b']]$ as "$[[b]]$ reduces to $[[b']]$".  The rules above can
+be seen as defining what it means for a boolean $[[b]]$ to reduce to
+$[[b']]$.
+
+The previous set of inference rules tell us how to reduce an Iffy
+program for one step only.  The following rules generalize this to
+allow for multiple steps:
+\begin{center}
+  \begin{math}
+    \begin{array}{lll}
+      \ottdruleRefl{} &
+      \ottdruleStep{} &
+      \ottdruleMult{} 
+    \end{array}
+  \end{math}
+\end{center}
+The judgment $b \redto^* b'$ is called multi-step reduction.
+% section iffy-lang (end)
+
+\section{Functional Iffy}
+\label{sec:functional_iffy}
+The Iffy PL as it is defined in the previous section is not very
+powerful.  It only allows for defining very basic boolean programs,
+and does not encourage abstraction.  In this section we extend Iffy
+with functions and global definitions.  This will allows us to
+construct reusable functions on the booleans, and thus allowing us to
+use abstraction, and even define new boolean operators that are not
+currently allowed in Iffy.  Furthermore, we can define full Iffy
+programs.
+
+Adding new structures to programming languages is a huge task, and it
+gets bigger as the PL gets more complicated.  We will see here that
+when adding functions to Iffy we have to add the syntax, and then add
+proper reduction rules capturing the operational meaning of functions.
+The latter point will require some non-trivial tools.
+
+\section{Syntax of Functional Iffy}
+\label{sec:syntax_of_functional_iffy}
+The first step in this extension is adding the syntax.  The syntax for
+Functional Iffy is as follows:
+\begin{center}
+  \begin{math}
+    \begin{array}{lllllllll}
+      (\text{Programs}) & [[P]] & ::= & [[x := b]] \mid [[P1 NEWLINE P2]]\\
+      (\text{Booleans}) & [[b]] & ::= & [[x]] \mid [[1]] \mid [[0]] \mid
+           [[b1 x b2]] \mid [[b1 + b2]] \mid [[if b b1 b2]] \mid
+           [[fun x => b]] \mid [[app b1 b2]]\\
+    \end{array}
+  \end{math}
+\end{center}
+This syntax gives us more control and a lot more power.  To define a
+global definition we use the syntax $[[x := b]]$, where $[[x]]$ is the
+name of the program we are defining, and $b$ is the actual boolean
+program.  The name $[[x]]$ can be any string following the Haskell
+variable naming convention.  We will use the convention that every
+globally defined name must be defined before it can be used.  As an
+example we can define the negation operator on booleans as follows:
+\begin{center}
+  \begin{math}
+    \mathsf{not} := [[fun x => if x 0 1]]
+  \end{math}
+\end{center}
+The following program defines the De Morgan's dual of conjunction:
+\begin{center}
+  \begin{math}
+    \begin{array}{lll}
+      \mathsf{not} := [[fun x => if x 0 1]]\\
+      \mathsf{dmconj} := [[fun x => fun y => app not ((app not x) x
+          (app not y))]]
+    \end{array}
+  \end{math}
+\end{center}
+The syntax for functions is $[[fun x => b]]$ where $[[x]]$ is the
+name of the input and $[[b]]$ is the body of the function.  These are
+called anonymous unary functions.  Given a function $[[b1]]$ we can
+apply it to an argument using the syntax $[[app b1 b2]]$ where
+$[[b2]]$ is any other program. Thus, $[[app not 0]]$ is equivalent to
+$[[app (fun x => if x 0 1) 0]]$.  Function application is the locus of
+computation, and is where all the fun happens during reduction.  
+% section syntax_of_functional_iffy (end)
+
+\subsection{Evaluation of Functional Iffy Programs}
+\label{subsec:evaluation_of_functional_iffy_programs}
+At this point we arrive at the difficult part of defining the
+operational behavior of our new additions.  The question we should be
+asking ourselves is how does $[[app b1 b2]]$ compute?  Suppose we have
+the identity function $[[fun x => x]]$.  This function simply echos
+back whatever input we give it.  So for example, $[[app (fun x => x)
+    0]]$ should reduce to $[[0]]$, but how do we capture this in a
+rule?
+
+\textbf{Parse Trees.}  An extremely useful tool when thinking about
+syntax of programming languages is the notion of a parse tree.  The
+following definition defines how to compute the parse tree of a given
+Iffy boolean program:
+\vspace{10px}
+\begin{definition}
+  \label{def:parse-tree}
+  The following meta-function defines how to compute the parse tree of
+  a given boolean program by structural recursion on the input program:
+  \begin{center}
+      \begin{tabular}{llc}
+        $[[pT 0]]$ & = & $[[0]]$\\
+        $[[pT 1]]$ & = & $[[1]]$\\
+        $[[pT x]]$ & = & $[[x]]$\\
+        $[[pT (b1 x b2)]]$ & = & \Tree [.$\land$ {$[[pT b1]]$} {$[[pT b2]]$} ]\\\\
+        $[[pT (b1 + b2)]]$ & = & \Tree [.$\lor$ {$[[pT b1]]$} {$[[pT b2]]$} ]\\\\
+        $[[pT (if b b1 b2)]]$ & = & \Tree [.$\mathsf{if}$ {$[[pT b1]]$} {$[[pT b]]$} {$[[pT b2]]$} ]\\\\
+        $[[pT (fun x => b)]]$ & = & \Tree [.$\mathsf{fun}\,[[x]]$ {$[[pT b]]$} ]\\\\
+        $[[pT (app b1 b2)]]$ & = & \Tree [.$\mathsf{app}$ {$[[pT b1]]$} {$[[pT b2]]$} ]\\\\
+      \end{tabular}
+  \end{center}
+\end{definition}
+We call $[[pT b]]$ a meta-function because it operators outside of the
+language, and is defined on programs, as opposed to being a program
+itself.  This meta-function is defined by \textbf{structural
+  recursion} on the input program because each recursive call is done
+on a subpiece of the input program.  This style of definition is
+typical of the definitions in programming language design.
+
+\textbf{Free and bound variables.}  Consider the syntax for functions
+$[[fun x => b]]$.  The body of the function, $[[b]]$, may then depend
+on the input variable $[[x]]$.  This may seem like an obvious point,
+but there are now some non-trivial programs that can cause confusion.
+An example of one is the program $[[app (fun x => x) x]]$, and another
+one is $[[fun x => fun x => x]]$.  The input variable to a function,
+for example $[[x]]$ in $[[fun x => b]]$, is called a \textbf{bound
+  variable} where its scope is limited to the body of the function
+$[[b]]$.  One should think of these as local variables.  A bound
+variable is always associated with a binder which is the
+``$\mathsf{fun}$'' in the syntax of functions. Consider the first
+example above, $[[app (fun x => x) x]]$, the $[[x]]$ in the body of
+the function is bound, but the $[[x]]$ in the argument position is not
+bound. Unbound variables are called \textbf{free variables}.  In the
+second example, $[[fun x => fun x => x]]$, the $[[x]]$ in the body of
+the inner function is bound to the second binder, and not the first.
+
+Parse trees make it a lot easier to see which variables are bound, and
+their associated binders.  First, construct the parse tree of a
+program, and then trace the tree in reverse starting with a variable
+-- the leaf of the tree -- then the first binder we hit where the
+input variable matches the variable we started with is the variables
+binder, and we conclude that the variable is bound, otherwise, we did
+not find a binder, and we conclude it is a free variable.  For
+example, consider the following parse tree:
+\begin{center}
+  \Tree [.$\mathsf{fun}\,x$ [ .$\mathsf{app}$ [ $[[x]]$ $[[y]]$ ] ] ]
+\end{center}
+If we place our finger on the $[[x]]$ leaf, and then trace backwards
+through the tree we will hit $\mathsf{fun}\,[[x]]$, and then we can
+conclude that $[[x]]$ is bound.  If we attempt the same procedure for
+the leaf labeled $[[y]]$ we never hit a binder matching $[[y]]$, and
+thus, $[[y]]$ is a free variable.  Consider a second example:
+\begin{center}
+  \Tree [.$\mathsf{fun}\,z$ [ .$\mathsf{app}$ [ [ .$\mathsf{app}$ [
+            $[[y]]$ $[[x]]$ ] ] [ .$\mathsf{fun}\,y$ [
+            .$\mathsf{fun}\,z$ $[[z]]$ ] ] ] ] ]
+\end{center}
+In the previous example the variables $[[y]]$ and $[[x]]$ are both
+free, while the variable $[[z]]$ is bound to the inner-most binder
+$\mathsf{fun}\,[[z]]$ and not the top most one.
+
+Notice that renaming variables in a program does not change its
+operational behavior.  Consider the two parse trees:
+\begin{center}
+  \begin{tabular}{lll}
+    \Tree [.$\mathsf{fun}\,z$ [ .$\mathsf{app}$ [ [ .$\mathsf{app}$ [
+            $[[y]]$ $[[x]]$ ] ] [ .$\mathsf{fun}\,y$ [
+              .$\mathsf{fun}\,z$ $[[z]]$ ] ] ] ] ]
+    & \quad &
+    \Tree [.$\mathsf{fun}\,x$ [ .$\mathsf{app}$ [ [ .$\mathsf{app}$ [
+            $[[z]]$ $[[w]]$ ] ] [ .$\mathsf{fun}\,z$ [
+            .$\mathsf{fun}\,x$ $[[x]]$ ] ] ] ] ]
+  \end{tabular}
+\end{center}
+These two denote the exact same program.  We say that they are
+\textbf{equivalent up to renaming of variables}.  The process of
+renaming variables is called $\alpha$-conversion.
+
+Keep in mind that when renaming variables the status of the varible --
+bound or free -- must be the same.  As an example the following two
+programs are \textbf{not the same}:
+\begin{center}
+  \begin{tabular}{lll}
+    \Tree [.$\mathsf{fun}\,x$ [ .$\mathsf{app}$ [ $[[x]]$ $[[y]]$ ] ]
+    ]
+    & \quad &
+    \Tree [.$\mathsf{fun}\,x$ [ .$\mathsf{app}$ [ $[[x]]$ $[[x]]$ ] ] ]
+  \end{tabular}
+\end{center}
+At this point we can define a bound variable as a variable underneath
+a binder labeled with its name, otherwise we call the variable bound.
+
+There is an alternative way of determining when a variable is bound or
+free by defining the set of all free variables of a program:
+\begin{center}
+  \begin{math}
+    \begin{array}{lll}
+      [[FV(0)]] & = & \emptyset\\
+      [[FV(1)]] & = & \emptyset\\
+      [[FV(x)]] & = & \{[[x]]\}\\
+      [[FV(b1 x b2)]] & = & [[FV(b1)]] \cup [[FV(b2)]]\\
+      [[FV(b1 + b2)]] & = & [[FV(b1)]] \cup [[FV(b2)]]\\
+      [[FV(if b b1 b2)]] & = & [[FV(b)]] \cup [[FV(b1)]] \cup [[FV(b2)]]\\
+      [[FV(fun x => b)]] & = & [[FV(b)]] - \{x\}\\
+      [[FV(app b1 b2)]] & = & [[FV(b1)]] \cup [[FV(b2)]]\\
+    \end{array}
+  \end{math}
+\end{center}
+Then a variable $[[x]]$ is free in the program $[[b]]$ iff $[[x]]\in
+[[FV(b)]]$. Otherwise we say it is bound.
+
+Similarly, we can construct the set of all bound variables:
+\begin{center}
+  \begin{math}
+    \begin{array}{lll}
+      [[BV(0)]] & = & \emptyset\\
+      [[BV(1)]] & = & \emptyset\\
+      [[BV(x)]] & = & \emptyset\\
+      [[BV(b1 x b2)]] & = & [[BV(b1)]] \cup [[BV(b2)]]\\
+      [[BV(b1 + b2)]] & = & [[BV(b1)]] \cup [[BV(b2)]]\\
+      [[BV(if b b1 b2)]] & = & [[BV(b)]] \cup [[BV(b1)]] \cup [[BV(b2)]]\\
+      [[BV(fun x => b)]] & = & [[BV(b)]] \cup \{x\}\\
+      [[BV(app b1 b2)]] & = & [[BV(b1)]] \cup [[BV(b2)]]\\
+    \end{array}
+  \end{math}
+\end{center}
+Now a variable $[[x]]$ is bound in a program $[[b]]$ iff $[[x]] \in
+[[BV(b)]]$.  Otherwise we say it is free.
+
+\textbf{Substitution.}  Our ultimate goal is to be able to define the
+evaluation rules for function application.  That is, if we have an
+expression $[[app (fun x => x) 0]]$ how to we define the evaluation
+rules so that this expression evaluates to the expression $[[0]]$?
+
+To answer this question we need to define a new meta-function called
+\textbf{capture-avoiding substitution}.  This is an operation that
+takes as input two Iffy programs, say $[[b1]]$ and $[[b2]]$, and the
+name of a free variable, say $[[x]]$, that may or not be free in
+$[[b2]]$, and then outputs a new Iffy program where every occurrence
+of $[[x]]$ in $[[b2]]$ is replaced by $[[b1]]$.  Consider an example,
+an Iffy program in parse-tree form is defined as follows:
+\begin{center}
+      \Tree [.$\mathsf{app}$ [ $[[x]]$ [ .$\mathsf{fun}\,z$ $[[x]]$
+            $[[y]]$ ] ] ]
+\end{center}
+Then substituting the program $[[1]]$ for $[[x]]$ in the above program
+yields:
+\begin{center}
+      \Tree [.$\mathsf{app}$ [ $1$ [ .$\mathsf{fun}\,z$ $1$
+            $[[y]]$ ] ] ]
+\end{center}
+If we replace $[[x]]$ with program $[[0 x 1]]$ then we obtain the
+following:
+\begin{center}
+      \Tree [.$\mathsf{app}$ [ [ .$\land$ $0$ $1$ ] [ .$\mathsf{fun}\,z$ [ .$\land$ $0$ $1$ ]    $[[y]]$ ] ] ]
+\end{center}
+
+Now if we replace $[[x]]$ with the program $[[app z 0]]$, note that
+$[[z]]$ is a free variable, we obtain the following:
+\begin{center}
+      \Tree [.$\mathsf{app}$ [ [ .$\mathsf{app}$ $z$ $0$ ] [ .$\mathsf{fun}\,z$ [ .$\mathsf{app}$ $z$ $0$ ]    $[[y]]$ ] ] ]
+\end{center}
+This does not seem quite right, because the variable $[[z]]$ was free
+in the program we were replacing $[[x]]$ with, and so it should always
+remain free after the substitution, but at the second location of
+$[[x]]$ the variable $[[z]]$ has become bound.  This is called
+\textbf{variable capture} and is something that we must prevent.
+
+To prevent variable capture first rename all the variables in $[[b1]]$
+so that they are distinct from the variables in $[[b2]]$.  This is
+called \textbf{$\alpha$-conversion}.  Then do the substitution.  So if
+we replace $[[x]]$ with the program $[[app z 0]]$, we first change
+$[[z]]$ to a new name, say $[[y]]$, resulting in $[[app y 0]]$, and
+then do the substitution obtaining:
+\begin{center}
+      \Tree [.$\mathsf{app}$ [ [ .$\mathsf{app}$ $y$ $0$ ] [ .$\mathsf{fun}\,z$ [ .$\mathsf{app}$ $y$ $0$ ]    $[[y]]$ ] ] ]
+\end{center}
+We can see that every occurrence of $[[y]]$ is free in the final
+result.
+
+At this point we define the substitution function on programs.
+\begin{definition}
+  \label{def:substitution}
+  Capture-avoiding substitution is defined as follows where it is
+  assumed that the variable names in $[[b1]]$ are distinct from the
+  variable names in $[[b2]]$.
+  \begin{center}
+    \begin{math}
+      \begin{array}{lll}
+        [[ [b1/x]0]] & = & [[0]]\\
+        [[ [b1/x]1]] & = & [[1]]\\
+        [[ [b1/x]x]] & = & [[b1]]\\
+        [[ [b1/x]y]] & = & [[y]]\\
+        \,\,\,\,\,\,\,\text{ where } x \neq y\\
+        [[ [b1/x](b2 x b3)]] & = & [[([b1/x]b2) x ([b1/x]b3)]]\\
+        [[ [b1/x](b2 + b3)]] & = & [[([b1/x]b2) + ([b1/x]b3)]]\\\\
+        [[ [b1/x](if b b2 b3)]] & = & [[if ([b1/x]b) ([b1/x]b2) ([b1/x]b3)]]\\
+        [[ [b1/x](fun x => b2)]] & = & [[fun x => b2]]\\
+        [[ [b1/x](fun y => b2)]] & = & [[fun y => [b1/x]b2]]\\
+        \,\,\,\,\,\,\,\text{ where } x \neq y\\        
+      \end{array}
+    \end{math}
+  \end{center}
+\end{definition}
+Here is an example of using this function:
+\begin{center}
+  \begin{math}
+    \begin{array}{lll}
+      [[ [0/x](fun y => if x 1 (x + y))]]
+      & = &
+      [[ fun y => [0/x](if x 1 (x + y))]]\\
+      & = &
+      [[ fun y => if ([0/x]x) ([0/x]1) ([0/x](x + y))]]\\
+      & = &
+      [[ fun y => if 0 ([0/x]1) ([0/x](x + y))]]\\
+      & = &
+      [[ fun y => if 0 1 ([0/x](x + y))]]\\
+      & = &
+      [[ fun y => if 0 1 (([0/x]x) + ([0/x]y))]]\\
+      & = &
+      [[ fun y => if 0 1 (0 + ([0/x]y))]]\\
+      & = &
+      [[ fun y => if 0 1 (0 + y)]]\\   
+    \end{array}
+  \end{math}
+\end{center}
+
+
+\textbf{Evaluation.}  We have finally arrived at the main event
+evaluation of functional Iffy!  Suppose we were asked to run the Iffy
+program $[[app (fun x => x) 0]]$, how would we do this?  It turns out
+that a special rule called the $\beta$-rule can be defined that allows
+us to simplify a program of the form $[[app (fun x => b) b']]$ for any
+programs $[[b]]$ and $[[b']]$.  A program of this form is called a
+\textbf{$\beta$-reducible expression ($\beta$-redex or redex)}.
+
+To simplify a $\beta$-redex we will use capture-avoiding substitution.
+The following inference rule defines evaluation for $\beta$-redexes:
+\[ \ottdruleBeta{} \]
+This rule says that in one step we can evaluate a $\beta$-redex into a
+substitution where we replace the variable, $[[x]]$, in $[[b]]$ with
+the argument the function is being applied to $[[b']]$.  Thus,
+function application is just substitution or replacement.  Note that
+on the left-hand side $[[x]]$ is bound in $[[b]]$, but when we move to
+the right-hand side we rip out the application and the binder, and
+thus, $[[x]]$ changes from a bound variable to a free variable which
+can be replaced using substitution.  In this rule we write
+$[[ [b'/x]b]]$ because we do not yet know what $[[b']]$ and $[[b]]$
+are, but when evaluating a particular example we will know what they
+are, and thus, $[[ [b/x]b]]$ should be replaced with the actual output
+of the function.
+
+We can now state the final single-step evaluation rules for functional
+Iffy:
+\begin{center}
+  \begin{mathpar}
+    \ottdruleAndTrue{} \and
+    \ottdruleAndFalseOne{} \and
+    \ottdruleAndFalseTwo{} \and
+    \ottdruleAndFalse{} \and
+    \ottdruleAndOne{} \and
+    \ottdruleAndTwo{} \and
+    \ottdruleOrTrue{} \and
+    \ottdruleOrTrueTwo{} \and
+    \ottdruleOrTrueOne{} \and
+    \ottdruleOrFalse{} \and
+    \ottdruleOrOne{} \and
+    \ottdruleOrTwo{} \and
+    \ottdruleIfTrue{} \and
+    \ottdruleIfFalse{} \and
+    \ottdruleIfOne{} \and
+    \ottdruleIfTwo{} \and
+    \ottdruleIfThree{} \and
+    \ottdruleBeta{} \and
+    \ottdruleFun{} \and
+    \ottdruleAppOne{} \and 
+    \ottdruleAppTwo{}
+  \end{mathpar}
+\end{center}
+The multiset reduction rules do not change.  They remain completely
+the same.
+
+We now give several example derivations:
+\begin{example}
+  \label{ex:eval1}
+  \ \\
+  \begin{center}
+  \begin{math}
+    $$\mprset{flushleft}
+    \inferrule* [right=Beta] {
+      \,
+    }{[[app (fun x => x) 0 ~> 0]]}
+  \end{math}
+\end{center}
+The previous example is a complete and valid derivation.  Why is this?
+It is valid, because $[[ [0/x]x]] = [[0]]$, and thus, the previous
+derivation applies the $\beta$-rule.
+\end{example}
+
+\begin{example}
+  \label{ex:eval2}
+  \ \\
+  \begin{center}
+  \begin{math}
+    $$\mprset{flushleft}
+    \inferrule* [right=Mult] {
+      $$\mprset{flushleft}
+      \inferrule* [right=Step] {
+        $$\mprset{flushleft}
+      \inferrule* [right=Beta] {
+        \,
+      }{[[app (fun x => if x 0 1) (0 x 1) ~> if (0 x 1) 0 1]]}
+      }{[[app (fun x => if x 0 1) (0 x 1) ~>* if (0 x 1) 0 1]]}
+      \\
+      D
+    }{[[app (fun x => if x 0 1) (0 x 1) ~>* 1]]}
+  \end{math}  
+  \end{center}
+  \ \\D:\\
+  \begin{center}
+    \begin{math}
+      $$\mprset{flushleft}
+  \inferrule* [right=Mult] {
+    $$\mprset{flushleft}
+    \inferrule* [right=Step] {
+      $$\mprset{flushleft}
+      \inferrule* [right=If1] {
+        $$\mprset{flushleft}
+        \inferrule* [right=AndFalse1] {
+          \,
+        }{[[0 x 1 ~> 0]]}
+      }{[[if (0 x 1) 0 1 ~> if 0 0 1]]}
+    }{[[if (0 x 1) 0 1 ~>* if 0 0 1]]}
+    \\
+      $$\mprset{flushleft}
+    \inferrule* [right=IfFalse] {
+      \,
+    }{[[if 0 0 1 ~>* 1]]}
+  }{[[if (0 x 1) 0 1 ~>* 1]]}
+    \end{math}
+  \end{center}
+  Note that $[[ [0 x 1/x](if x 0 1)]] = [[if (0 x 1) 0 1]]$.
+\end{example}
+
+\begin{example}
+  \label{ex:eval3}
+  \ \\
+  \begin{center}
+    \scriptsize
+    \begin{math}
+      $$\mprset{flushleft}
+      \inferrule* [right={\scriptsize Mult}] {
+        $$\mprset{flushleft}
+        \inferrule* [right={\scriptsize Step}] {
+          $$\mprset{flushleft}
+          \inferrule* [right={\scriptsize App1}] {
+            $$\mprset{flushleft}
+            \inferrule* [right={\scriptsize Beta}] {
+              \,
+            }{[[app (fun x => fun y => if x (x x y) (x + y)) 0 ~> fun y => if 0 (0 x y) (0 + y)]]}
+          }{[[app (app (fun x => fun y => if x (x x y) (x + y)) 0) 1 ~> app (fun y => if 0 (0 x y) (0 + y)) 1]]}
+        }{[[app (app (fun x => fun y => if x (x x y) (x + y)) 0) 1 ~>* app (fun y => if 0 (0 x y) (0 + y)) 1]]}
+        \\
+        D_1
+      }{[[app (app (fun x => fun y => if x (x x y) (x + y)) 0) 1 ~>* 1]]}
+    \end{math}
+  \end{center}
+
+  \ \\$D_1$:\\
+  \begin{center}
+    \scriptsize
+    \begin{math}
+      $$\mprset{flushleft}
+      \inferrule* [right={\scriptsize Mult}] {
+        $$\mprset{flushleft}
+        \inferrule* [right={\scriptsize Step}] {
+          $$\mprset{flushleft}
+          \inferrule* [right={\scriptsize Beta}] {
+            \,
+          }{[[app (fun y => if 0 (0 x y) (0 + y)) 1 ~> if 0 (0 x 1) (0 + 1)]]}
+        }{[[app (fun y => if 0 (0 x y) (0 + y)) 1 ~>* if 0 (0 x 1) (0 + 1)]]}
+        \\
+        D_2
+      }{[[app (fun y => if 0 (0 x y) (0 + y)) 1 ~>* 1]]}
+    \end{math}
+  \end{center}
+
+    \ \\$D_2$:\\
+  \begin{center}
+    \scriptsize
+    \begin{math}
+      $$\mprset{flushleft}
+      \inferrule* [right={\scriptsize Mult}] {
+        $$\mprset{flushleft}
+        \inferrule* [right={\scriptsize Step}] {
+          $$\mprset{flushleft}
+          \inferrule* [right={\scriptsize IfFalse}] {
+            \,
+          }{[[if 0 (0 x 1) (0 + 1) ~> 0 + 1]]}
+        }{[[if 0 (0 x 1) (0 + 1) ~>* 0 + 1]]}
+        \\
+          $$\mprset{flushleft}
+        \inferrule* [right={\scriptsize Step}] {
+          $$\mprset{flushleft}
+          \inferrule* [right={\scriptsize orTrue2}] {
+            \,
+          }{[[0 + 1 ~> 1]]}
+        }{[[0 + 1 ~>* 1]]}
+      }{[[if 0 (0 x 1) (0 + 1) ~>* 1]]}
+    \end{math}
+  \end{center}
+\end{example}
+
+\textbf{Rewrite Rules.}  So far we have used the evaluation rules to
+show that one program evaluates into another.  Is it possible to
+evaluate the program without knowing what the output would be?  That
+is, given a program $[[b]]$ is it possible to simply run it?  Yes, we
+can, and we can define rules, called \textbf{rewrite rules}, that
+allow us to do this.
+
+The set of rewrite rules for functional Iffy are defined as follows:
+  \begin{mathpar}
+      \inferrule* [right=AndTrue] {
+        \,
+      }{[[(1 x 1) ~>* 1]]}
+      \and
+      \inferrule* [right=AndFalse1] {
+        \,
+      }{[[(0 x 1) ~>* 0]]}
+      \and
+      \inferrule* [right=AndFalse2] {
+        \,
+      }{[[(1 x 0) ~>* 0]]}
+      \and
+      \inferrule* [right=AndFalse] {
+        \,
+      }{[[(0 x 0) ~>* 0]]}
+      \and
+      \inferrule* [right=OrTrue] {
+        \,
+      }{[[(1 + 1) ~>* 1]]}
+      \and
+      \inferrule* [right=OrTrue1] {
+        \,
+      }{[[(1 + 0) ~>* 1]]}
+      \and
+      \inferrule* [right=OrTrue1] {
+        \,
+      }{[[(0 + 1) ~>* 1]]}
+      \and
+      \inferrule* [right=OrFalse] {
+        \,
+      }{[[(0 + 0) ~>* 0]]}
+      \and
+      \inferrule* [right=IfTrue] {
+        \,
+      }{[[if 1 b1 b2 ~>* b1]]}
+      \and
+      \inferrule* [right=IfFalse] {
+        \,
+      }{[[if 0 b1 b2 ~>* b2]]}
+      \and
+      \inferrule* [right=Beta] {
+        \,
+      }{[[app (fun x => b) b' ~>* [b'/x]b]]}      
+  \end{mathpar}
+They are the same as all the axioms of the single-step reduction
+rules.  We will use these rules to pattern match on subprograms of
+larger programs against the left-hand side of the rules above, and
+then replace the matching subprogram with the right-hand side.
+However, we first must understand what a subprogram.
+\vspace{10px}
+\begin{definition}
+  \label{def:subprog}
+  A program $[[b1]]$ is a subprogram of $[[b2]]$ if and only if at
+  least one of the following is true:
+  \begin{itemize}
+  \item $[[b1]]$ is literally $[[b2]]$
+  \item If $[[b2]] = [[b3 x b4]]$ for some programs $[[b3]]$ and 
+    $[[b4]]$, and $[[b1]]$ is one of these two programs
+  \item If $[[b2]] = [[b3 + b4]]$ for some programs $[[b3]]$ and 
+    $[[b4]]$, and $[[b1]]$ is one of these two programs
+  \item If $[[b2]] = [[if b3 b4 b5]]$ for some programs $[[b3]]$,
+    $[[b4]]$, and $[[b5]]$, and $[[b1]]$ is one of these three
+    programs
+  \item If $[[b2]] = [[fun x => b3]]$ for some program $[[b3]]$, and
+    $[[b1]]$ is $[[b3]]$
+  \item If $[[b2]] = [[app b3 b4]]$ for some programs $[[b3]]$ and 
+    $[[b4]]$, and $[[b1]]$ is one of these two programs
+  \end{itemize}
+\end{definition}
+The program $[[0]]$ is a subprogram of $[[0]]$, $[[0 + x]]$ is a
+subprogram of $[[fun x => (0 + x)]]$.  Similarly, $[[app y (fun x =>
+    x)]]$ is a subprogram of $[[0 x (app y (fun x => x))]]$.   Some
+none subprograms would be $\mathsf{app}$ and $\mathsf{fun}\,[[x]]$
+which are not subprograms of any programs.
+
+Now if a subprogram matches the left-hand side of the set of axioms
+listed above, then we are allowed to replace that subprogram with the
+right-hand side.  An example will best illustrate how we are going to
+write this down (then we will discuss this more in class):
+\begin{center}
+  \begin{math}
+    \begin{array}{rcl}
+      [[app (ul(app (fun x => fun y => if x (x x y) (x + y)) 0)) 1]]
+      & \stackrel{\textsc{Beta}}{\redto^*} & 
+      [[ul(app (fun y => if 0 (0 x y) (0 + y)) 1)]]\\
+      & \stackrel{\textsc{Beta}}{\redto^*} & 
+      [[ul(if 0 (0 x 1) (0 + 1))]]\\
+      & \stackrel{\textsc{IfFalse}}{\redto^*} & 
+      [[ul(0 + 1)]]\\
+      & \stackrel{\textsc{OrTrue2}}{\redto^*} & 
+      [[1]]
+    \end{array}
+  \end{math}
+\end{center}
+First, notice how much shorter these are, but also note that the order
+in which we simplified the above does not matter.  For example, we
+could have done the following:
+\begin{center}
+  \begin{math}
+    \begin{array}{rcl}
+      [[app (ul(app (fun x => fun y => if x (x x y) (x + y)) 0)) 1]]
+      & \stackrel{\textsc{Beta}}{\redto^*} & 
+      [[app (fun y => ul(if 0 (0 x y) (0 + y))) 1]]\\
+      & \stackrel{\textsc{IfFalse}}{\redto^*} & 
+      [[ul(app (fun y => (0 + y)) 1)]]\\
+      & \stackrel{\textsc{Beta}}{\redto^*} & 
+      [[ul(0 + 1)]]\\
+      & \stackrel{\textsc{OrTrue2}}{\redto^*} & 
+      [[1]]\\      
+    \end{array}
+  \end{math}
+\end{center}
+When rewriting instead of deriving the format above must be adhered
+to on homework assignments.
+% subsection evaluation_of_functional_iffy_programs (end)
+% section functional_iffy (end)
+
+
+\bibliographystyle{plain}
+\bibliography{thesis}
+\end{document}

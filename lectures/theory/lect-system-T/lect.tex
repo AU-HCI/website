@@ -1,0 +1,307 @@
+\documentclass{article}
+\usepackage{parskip}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{mathpartir}
+\usepackage{verbatim}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{notn}[thm]{Notation}
+\newtheorem{observation}[thm]{Observation}
+
+\newcommand {\redto}[0]{\rightsquigarrow}
+
+\input{lam-ott}
+
+\title{Lecture 4: Well-typed programs never go wrong!\\Programming Languages (CSCI 3300), Fall 2014\vspace{-22px}}
+\author{Prof. Harley Eades (heades@gru.edu).}
+\date{\vspace{-22px}}
+\begin{document}
+\maketitle  
+
+Many programming languages have types.  For example, C\# has the types
+bool, int, char, and many others.  In fact, you can also construct new
+types by building classes.  In a language like C\# the type system is
+there to prevent the programmer from applying a method that expects
+something of one type to something of a different type.  For example,
+trying to divide a string by a number is not allowed.  This is perhaps
+the most obvious applications of types, but they amount to so much
+more.  
+
+\textbf{We can think of a type as being a specification of what a
+  program is supposed to do}.  For example, consider the type of the
+length function for lists:
+\begin{center}
+  \begin{verbatim}
+    length :: [a] -> Int
+  \end{verbatim}
+\end{center}
+The type of length tells us that it takes a list of type \verb=a= and
+returns an integer.  So how many possible implementations are there
+for length?  There are a lot!  In fact, an infinite number of them.
+Here are a few of them:
+\begin{center}
+  \begin{verbatim}
+    length l = 0
+    length l = 1
+    length l = 2
+    length l = 3   
+  \end{verbatim}
+\end{center}
+However, due to the name these are not the ones we would expect.  We
+would expect the implementation to be the following:
+\begin{center}
+  \begin{verbatim}
+    length :: [a] -> Int
+    length [] = 0
+    length (x:xs) = 1 + (length xs)
+  \end{verbatim}
+\end{center}
+In some more advanced systems we could change the type to cut down on
+the number of possible implementations.  Suppose $p$ is a logical
+predicate that takes in a list and a number, and then is true when the
+length of the list is equal to the number.  So for example,
+$p([1,2,3,4], 4)$ is true, but $p([1,2,3,4,5], 4)$ is false.  Now if
+Haskell's type system was extended then we could change the type of
+the length function to not only return an integer, but to also
+return a proof that the number is the length of the list. 
+\begin{center}
+  \begin{verbatim}
+    length :: (l : [a]) -> (n:Int,p l n)
+  \end{verbatim}
+\end{center}
+If this were possible -- and in some programming languages it is --
+then there would exist only one possible implementation of length and
+we would have a mathematical proof that this is true.  \textbf{Thus,
+  the type system can be used to enforce program correctness.}  The
+more sophisticated the type system the better the specifications
+become, and thus, the more correct programs become.  This is very
+profound.  So if one is the programmer implementing the latter length
+function above, then when the programmer gets their implementation to
+type check, it is with mathematical certainty the correct program,
+because the type encodes the specification of what it is to be a
+length function using $p$.  These style of types are called dependent
+types because the types depend on other programs.  For example, the
+return type of \verb=length= above depends on the integer, and on $p$
+which can both be considered as programs.
+
+In this lecture we start with a very basic type system for the
+$\lambda$-calculus.  The kind of types we will be dealing with are
+called \textbf{simple types}.  While they are simple they still have a
+very profound impact on the language.  We introduce simple types by
+studying a type system designed by Kurt G\"odel called system T.
+
+\section{System T}
+\label{sec:system_t}
+In this section we define G\"odel's system T.  This is just a fancy
+name, and do not worry, because this PL will simply be an extension of
+the $\lambda$-calculus.  
+
+\subsection{Syntax of System T}
+\label{subsec:syntax}
+The syntax of system T is as follows:
+\begin{center}
+  \begin{math}
+    \begin{array}{rll}
+      \text{(Types)} & T,A,B,C ::= [[Nat]] \mid [[A -> B]]\\
+      \text{(Terms)} & t ::= [[x]] \mid [[0]] \mid [[Suc t]] \mid
+      [[\x:T.t]] \mid [[t1 t2]] \mid [[rec t t1 t2]]\\    
+      \text{(Contexts)}  & [[G]] ::= \cdot \mid [[x]]:[[T]] \mid [[G1,G2]]\\
+    \end{array}
+  \end{math}
+\end{center}
+One can see that the syntax above is simply an extension of the syntax
+of the untyped $\lambda$-calculus.  First, a new syntactic category
+for types as been added where $[[Nat]]$ is the type for natural
+numbers, and $[[A -> B]]$ is the type of unary functions
+($\lambda$-abstractions).  Then the terms of the $\lambda$-calculus
+have been extended to include the natural number $[[0]]$, the
+successor function $[[Suc t]]$, and the most interesting part
+recursion denoted $[[rec t t1 t2]]$. Finally, we add a second new
+syntactic category called contexts.  These should be considered as
+lists of pairs of variables and types denoted $[[x : T]]$.  These will
+be used to keep track of the types of free variables during type
+checking -- we introduce type checking below.
+
+\textbf{Parsing Conventions.} All of the parsing conversions we have
+been using still stand, but there is one new one which is that the
+function type associates to the right.  That is,
+\[ [[T1]] \to [[T2]] \to \cdots \to [[Ti]] \equiv ([[T1]] \to ([[T2]]
+\to (\cdots ([[T]]_{i-1} \to [[Ti]]) \cdots ))) \] Note that this is
+opposite to application.
+% subsection syntax (end)
+
+\subsection{Types in System T}
+\label{subsec:type_checking}
+Perhaps the biggest addition to system T is the notion of a type.  The
+most obvious application of types is to insure that the correct data
+is given to a function when applying it, however, types provide so
+much more, but first we must understand the basics.
+
+The function type $[[A -> B]]$ means that a function with this type
+only accepts arguments whose type is $[[A]]$, and once given an
+argument of type $[[A]]$ the function will produce something of type
+$[[B]]$.  These are equivalent to function types in Haskell.  Now in
+system T the $\lambda$-abstractions are actually annotated with the
+type of the argument.  For example, $[[\x:Nat.x]]$ is the identity
+function that takes in only a natural number, and then returns the
+same number. Thus, its type is $[[Nat -> Nat]]$. If one was to apply
+this function to anything else then the application would fail to type
+check, but what is type checking?
+
+Type checking corresponds to an algorithm that takes as input a term,
+and a list of types for each free variable of the input term, and then
+computes the type of the term.  We denote this by $[[G |- t : T]]$
+where $[[G]]$ is the list of free variables with their types called a
+\textbf{typing context}, $[[t]]$ is the input term, $[[T]]$ is the
+proposed type.  Then we \textbf{check} to see if $[[t]]$ has type
+$[[T]]$ by constructing a derivation using the type checking inference
+rules.  This is similar to how we show that a term reduces to another
+using the reduction rules.  The type checking rules are as follows:
+\begin{center}
+  \begin{mathpar}
+    \ottdruleTXXVar{} \and
+    \ottdruleTXXLam{} \and    
+    \ottdruleTXXApp{} \and
+    \ottdruleTXXZero{} \and
+    \ottdruleTXXSuc{} \and
+    \ottdruleTXXRec{} 
+  \end{mathpar}
+\end{center}
+Notice that there is a typing rule per term (or program) of system T.
+The typing rule $\ottdrulename{T\_Var}$ says that a variable $[[x]]$
+has type $[[T]]$ if the typing context says it does.  Then the rule
+$\ottdrulename{T\_Lam}$ says that if $[[t]]$ has type $[[T2]]$ in a
+context where $[[x]]$ has type $[[T1]]$ -- here $[[x]]$ is the
+argument to the function -- then $[[\x:T1.t]]$ has type $[[T1 ->
+T2]]$.  If $[[t1]]$ has type $[[T1 -> T2]]$ -- so $[[t1]]$ is a
+function -- and $[[t2]]$ has type $[[T1]]$, then the application $[[t1
+t2]]$ has type $[[T2]]$.  So the rule $\ottdrulename{T\_App}$ captures
+the fact that application really is function application.  Note that
+this limits which terms can be arguments to functions which is very
+different from the untyped $\lambda$-calculus.  Now the rule
+$\ottdrulename{T\_Zero}$ states that no matter what $[[0]]$ is a
+$[[Nat]]$.  Similarly, if we know $[[t]]$ is a natural number, then we
+should know that $[[Suc t]]$ is, and this is exactly what the rule
+$\ottdrulename{T\_Suc}$ gives us.
+
+Probably the most interesting and complex rule is the one for the
+recursor $[[rec t t1 t2]]$. Each piece of the recursor should be
+interpreted as follows:
+\begin{center}
+  \begin{tabular}{lll}
+    - The term $[[t]]$ is a natural number called the counter,\\
+    - The term $[[t1]]$ is the base case (when $[[t]]$ is zero), and\\
+    - The term $[[t2]]$ is the step case.
+  \end{tabular}
+\end{center}
+So the typing rule $\ottdrulename{T\_Rec}$ says that if $[[t]]$ is a
+natural number, that is, of type $[[Nat]]$, the base case $[[t1]]$ is
+of type $[[T]]$, and the step case $[[t2]]$ is of type $[[h{T -> h{Nat
+    -> T}}]]$, then the term $[[rec t t1 t2]]$ has type $[[T]]$.  One
+should think of the recursor as computing something of type $[[T]]$
+using recursion.
+
+Now we consider several examples of type checking terms:
+\begin{itemize}
+\item Determine if the term $[[\x:Nat.x]]$ has type $[[Nat -> Nat]]$.
+  First, notice that there are no free variables in $[[\x:Nat.x]]$ and
+  so the context will start out empty.  The typing derivation is as
+  follows:
+  \begin{center}
+    \begin{math}
+      \begin{array}{lll}
+        $$\mprset{flushleft}
+        \inferrule* [right=T\_Lam] {
+          $$\mprset{flushleft}
+          \inferrule* [right=T\_Var] {
+            [[x : Nat in x : Nat]]
+          }{[[x : Nat |- x : Nat]]}
+        }{[[. |- \x:Nat.x : Nat -> Nat]]}
+      \end{array}
+    \end{math}
+  \end{center}
+\item Determine if the term $[[\x:Nat -> Nat.\y:Nat.h(x y)]]$ has type
+  $[[Nat -> h{Nat -> Nat}]]$:
+  \begin{center}
+    \small
+    \begin{math}
+      $$\mprset{flushleft}
+      \inferrule* [right=\scriptsize T\_Lam] {
+        $$\mprset{flushleft}
+        \inferrule* [right=\scriptsize T\_Lam] {
+          $$\mprset{flushleft}
+          \inferrule* [right=\scriptsize T\_App] {
+            $$\mprset{flushleft}
+            \inferrule* [right={\scriptsize T\_Var}] {
+              [[x : Nat -> Nat in x : Nat -> Nat, y : Nat]]
+            }{[[x : Nat -> Nat, y : Nat |- x : Nat -> Nat]]}
+            \\
+            $$\mprset{flushleft}
+            \inferrule* [right=T\_Var] {
+              [[y : Nat in x : Nat -> Nat, y : Nat]]
+            }{[[x : Nat -> Nat, y : Nat |- y : Nat]]}
+          }{[[x : Nat -> Nat, y : Nat |- x y : Nat]]}
+        }{[[x : Nat -> Nat |- \y:Nat.h(x y) : h{Nat -> Nat}]]}
+      }{[[. |- \x:Nat -> Nat.\y:Nat.h(x y) : Nat -> h{Nat -> Nat}]]}
+    \end{math}
+  \end{center}
+
+\item Determine if the term $[[\x:Nat.h(x y)]]$ has type $[[Nat ->
+  Nat]]$ when $[[y]]$ has type $[[Nat]]$. Notice here $[[y]]$ is free
+  so we must start out with $[[y]]$ in the context:
+  \begin{center}
+    \begin{math}
+      $$\mprset{flushleft}
+      \inferrule* [right=T\_Lam] {
+        $$\mprset{flushleft}
+        \inferrule* [right=T\_App] {
+          [[y : Nat, x : Nat |- x : Nat -> Nat]]
+          \\
+          $$\mprset{flushleft}
+          \inferrule* [right=T\_Var] {
+            [[y : Nat in y : Nat, x : Nat]]
+          }{[[y : Nat, x : Nat |- y : Nat]]}
+        }{[[y : Nat, x : Nat |- x y : Nat]]}
+      }{[[y : Nat |- \x:Nat.h(x y) : Nat -> Nat]]}
+    \end{math}
+  \end{center}
+  The previous derivation fails, because $[[x]]$ has type $[[Nat]]$,
+  but we needed it to have type $[[Nat -> Nat]]$.  Thus, the term
+  $[[\x:Nat.h(x y)]]$ does not have type $[[Nat -> Nat]]$.  We call
+  this a type error.
+\end{itemize}
+% subsection type_checking (end)
+
+\subsection{Computing in System T}
+\label{subsec:computing_in_system_t}
+
+\begin{center}
+  \begin{mathpar}
+    \ottdruleEXXBeta{}    \and
+    \ottdruleEXXRecBase{}     \and
+    \ottdruleEXXRecStep{}     \and
+    \ottdruleEXXLam{}     \and
+    \ottdruleEXXAppOne{}  \and
+    \ottdruleEXXAppTwo{}  \and
+    \ottdruleEXXSuc{} \and
+    \ottdruleEXXRecOne{} \and
+    \ottdruleEXXRecTwo{} \and
+    \ottdruleEXXRecThree{}
+  \end{mathpar}
+\end{center}
+% subsection computing_in_system_t (end)
+% section the_simply-typed_$\lambda$-calculus (end)
+
+
+% \bibliographystyle{plain}
+% \bibliography{thesis}
+\end{document}

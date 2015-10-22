@@ -25,6 +25,15 @@ main = hakyll $ do
     -- match "slides/*"      $ myMakeHTML
     match "homeworks/*"   $ myMakeHTML
     match "final/*"       $ myMakeHTML
+          
+    match "lectures/theory/lambda-calculus/lect.pdf" $ do
+                  route   idRoute
+                  compile copyFileCompiler
+
+    match "lectures/theory/church-encodings/lect.pdf" $ do
+                  route   idRoute
+                  compile copyFileCompiler                                            
+          
     match (fromList tops) $ myMakeHTML
 
 
