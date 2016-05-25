@@ -4,20 +4,38 @@ title: Lectures
 
 **Date**         **Topic**                                          **Notes**
 ------------     ----------------------------------------------     ------------------------
-  *10/15*        Locally-Closed Binding Representation              [html][lec1]  [hs][lhs1]
+  *08/18*        ?
+  *08/23*        ?
+  *08/25*        ?
+  *08/30*        ?
+  *09/01*        ?
+  *09/06*        ?
+  *09/08*        ?
+  *09/13*        ?
+  *09/15*        ?
+  *09/20*        ?
+  *09/22*        ?
+  *09/27*        ?
+  *09/29*        ?
+  *10/04*        ?
+  *10/06*        ?
+  *10/11*        ?    
+  *10/13*        No Class
+  *10/18*        Locally-Closed Binding Representation              [html][lec1]  [hs][lhs1]
   *10/20*        $\lambda$-Calculus                                 [pdf][pdf2]
-  *10/22*        Locally-Closed Binding Representation              [html][lec1]  [hs][lhs1]
+  *10/25*        Locally-Closed Binding Representation              [html][lec1]  [hs][lhs1]
   *10/27*        Church Encodings                                   [pdf][pdf4]
-  *10/29*        Introduction to Monads                             [html][lec2]  [hs][lhs2]
+  *11/01*        Introduction to Monads                             [html][lec2]  [hs][lhs2]
   *11/03*        Introduction to Monads                             [html][lec2]  [hs][lhs2]
-  *11/05*        Introduction to Monads                             [html][lec2]  [hs][lhs2]    
+  *11/08*        Introduction to Monads                             [html][lec2]  [hs][lhs2]    
   *11/10*        Church Encodings                                   [pdf][pdf4]
-  *11/12*        Liquid Haskell                                     [html][lec3]  [hs][lhs3]
+  *11/15*        Liquid Haskell                                     [html][lec3]  [hs][lhs3]
   *11/17*        Simple Types                                       [pdf][pdf4]
-  *11/19*        Liquid Haskell                                     [html][lec3]  [hs][lhs3]
-  *11/24*        Simple Types                                       [pdf][pdf4]
+  *11/22*        Liquid Haskell                                     [html][lec3]  [hs][lhs3]
+  *11/24*        No class
+  *11/29*        Simple Types                                       [pdf][pdf4]
   *12/01*        Liquid Haskell                                     [html][lec3]  [hs][lhs3]
-  *12/03*        Putting it all Together                            [pdf][pdf4]    
+  *12/06*        Putting it all Together                            [pdf][pdf4]    
 --------------------------------------------------------------------------------------------
 
 [lec1]: lectures/lec-locally-closed-1.html

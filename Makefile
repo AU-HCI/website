@@ -22,10 +22,7 @@ clean:
 
 update: all
 	cp -R _site/* $(SITEPATH)
-	cd $(SITEPATH)
-	git add .
-	git commit -a -m 'Updating CSCI:3300 Website.'
-	git push
+	cd $(SITEPATH) && git add . && git commit -a -m 'Updating CSCI:3300 Website.' && git push
 
 slides:
 	cd slides && make && cd ..
