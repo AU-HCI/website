@@ -62,7 +62,7 @@ the first two:
   \begin{math}
     \begin{array}{lll}
       \mathsf{True}  := [[\x.h(\y.x)]]\\
-      \mathsf{False} := [[\x.h(\y.x)]]\\
+      \mathsf{False} := [[\x.h(\y.y)]]\\
     \end{array}
   \end{math}
 \end{center}
@@ -110,6 +110,7 @@ If you look at the definition $[[if]]$ closely you will see that
 really all it does is call the boolean.  Thus, it is the data
 $[[True]]$ and $[[False]]$ that are really determining the behavior of
 $[[if]]$.  This is the essence of these types of datatype encodings.
+That is, they embody case analysis.
 
 Now that we have the if-expression we can define any other boolean
 operation we want.  For example:
@@ -266,9 +267,9 @@ Now our base case is one instead of zero.  We can see that:
 This implies that we can also define multiplication in terms of
 addition.  We denote the addition we defined above as $[[plus]]$.  Now
 using $\lambda$-calculus notation if we could transform $\hat{3} =
-s\,s\,s\,0$ into the function $\lambda s.s\,s,\,s\,0$, then we could
-simply apply the latter to the function $\lambda n.[[plus]]\,4\,n$, then
-we would obtain 
+s\,s\,s\,0$ into the function $\lambda s.s\,s\,s\,0$, then we could
+simply apply the latter to the function $\lambda n.[[plus]]\,4\,n$,
+and we would obtain
 \begin{center}
   \begin{math}
     \begin{array}{lll}

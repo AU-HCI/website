@@ -1,6 +1,5 @@
 RSYNC=$(shell pwd)/sync.sh
-SITEUSER=heades@alonzo.metatheorem.org
-SITEPATH=/home/heades/www/metatheorem.org/public_html/courses/3300-PLC
+SITEPATH=/Users/heades/website/heades.github.io/CSCI3300/
 
 PANDOCHANDOUT=pandoc --highlight-style=tango --from=markdown+lhs --chapters --latex-engine=pdflatex --template=templates/handout.latex --filter templates/inside.hs
 
@@ -22,7 +21,11 @@ clean:
 	rm -rf *.hi *.o .*.swp .*.swo website _site/ _cache/
 
 update: all
-	scp -r _site/* $(SITEUSER):$(SITEPATH)
+	cp -R _site/* $(SITEPATH)
+	cd $(SITEPATH)
+	git add .
+	git commit -a -m 'Updating CSCI:3300 Website.'
+	git push
 
 slides:
 	cd slides && make && cd ..
