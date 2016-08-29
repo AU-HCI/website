@@ -10,9 +10,6 @@ all: website
 	stack exec -- website rebuild
 	cp css/syntax-rj.css _site/css/syntax.css
 	cp lectures/*.lhs _site/lectures/
-	cp -p -r slides _site/
-	cp homeworks/*.lhs _site/homeworks/
-	cp final/*.lhs _site/final/
 
 website: src/Site.hs
 	stack build

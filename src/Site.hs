@@ -33,7 +33,11 @@ main = hakyll $ do
     match "lectures/theory/church-encodings/lect.pdf" $ do
                   route   idRoute
                   compile copyFileCompiler                                            
-          
+
+    match "lectures/theory/Iffy-Lang/lect.pdf" $ do
+                  route   idRoute
+                  compile copyFileCompiler                                            
+                          
     match (fromList tops) $ myMakeHTML
 
 
