@@ -21,7 +21,6 @@ title: Lectures
                  Introduction to Monads                                     [html][lec8]  [hs][lhs8]
                  Introduction to Monads                                     [html][lec8]  [hs][lhs8]
                  Locally-Closed Binding Representation                      [html][lec7]  [hs][lhs1]    
-                 No Class
                  Locally-Closed Binding Representation                      [html][lec7]  [hs][lhs1]
                  Church Encodings                                           [pdf][pdf4]
                  Locally-Closed Binding Representation                      [html][lec7]  [hs][lhs1]
@@ -33,7 +32,6 @@ title: Lectures
                  Mathematical Programming: Monoids
                  Mathematical Programming: Monoids
                  Mathematical Programming: Monoids
-                 No class
                  Liquid Haskell                                             [html][lec9]  [hs][lhs9]
                  Liquid Haskell                                             [html][lec9]  [hs][lhs9]
                  Putting it all Together                                    [pdf][pdf4]    
