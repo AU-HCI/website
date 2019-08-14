@@ -21,7 +21,7 @@ main = hakyll $ do
         compile compressCssCompiler
 
     match "templates/*"   $ compile templateCompiler
-    match "lectures/*"    $ myMakeHTML
+    match "lectures/*.lhs"    $ myMakeHTML
     -- match "slides/*"      $ myMakeHTML
     match "homeworks/*"   $ myMakeHTML
     match "final/*"       $ myMakeHTML

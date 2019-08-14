@@ -4,7 +4,7 @@ title: Home
 
 ## Syllabus
 
-The syllabus can be found [here](https://piazza.com/class_profile/syllabus/irxn4m6sk3f10m)
+The syllabus can be found [here](https://piazza.com/class_profile/syllabus/jktu69sg8qa60q)
 
 ## Staff
 
@@ -14,8 +14,10 @@ The syllabus can be found [here](https://piazza.com/class_profile/syllabus/irxn4
 
 Office hours will be held in E132 AH during the following times:
 
-+ MW: 8:00am - 10:30am
-+ TR: 2:15pm - 4:45pm
++ TR: 10:00am - 11:30am
++ TR: 1:00pm - 2:30pm
+
+Office hours will take place at the new building.
 
 ## Description
 
@@ -26,7 +28,7 @@ a wide range of programming languages in a simplified setting.  We
 will also be learning the functional programming language Haskell, as
 well as some interesting extensions of Haskell.
 
-+ [Book](http://www.haskellcraft.com/craft3e/Home.html)
++ [Book](http://www.cs.nott.ac.uk/~pszgmh/pih.html)
 + [Course Calendar](https://www.google.com/calendar/embed?src=3ekrviscan57vh4raoblif5gbg%40group.calendar.google.com&ctz=America/New_York )
 
 ## Prerequisites
