@@ -4,7 +4,7 @@ title: Home
 
 ## Syllabus
 
-The syllabus can be found [here](https://piazza.com/class_profile/syllabus/jktu69sg8qa60q)
+The syllabus can be found [here](https://piazza.com/class_profile/syllabus/jzbjw4slcq04xx)
 
 ## Staff
 
