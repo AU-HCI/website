@@ -4,8 +4,9 @@ title: Lectures
 
 **Date**         **Topic**                                                  **Notes**
 ------------     ----------------------------------------------             ------------------------
-                 Syntax: Grammars, Iffy-Lang, Inference Rules, Evaluation   [pdf][lec1]
-                 Introduction to GHCI: Haskell Syntax, Types, and more      
+08/27/19         Git Cheat Sheet                                            [lec0]
+08/27/19         Introduction to GHCI: Haskell Syntax, Types, and more      
+08/29/19         Syntax: Grammars, Iffy-Lang, Inference Rules, Evaluation   [pdf][lec1]                 
                  Functions, Pattern Matching, and Polymorphism              [html][lec2]  [hs][lhs2]
                  Functional Iffy: Free/Bound Variables and Substiution      [pdf][lec1]
                  Quick Check                                                [html][lec3]  [hs][lhs3]
@@ -22,6 +23,7 @@ title: Lectures
                  Putting it all Together                                    [pdf][pdf4]    
 -------------------------------------------------------------------------------------------------
 
+[lec0]: lectures/git.html
 [lec1]: lectures/theory/Iffy-Lang/lect.pdf
 [lec2]: lectures/lec-functions-patternmatching-polymorphism.html
 [lhs2]: lectures/lec-functions-patternmatching-polymorphism.lhs

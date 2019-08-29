@@ -22,6 +22,7 @@ main = hakyll $ do
 
     match "templates/*"   $ compile templateCompiler
     match "lectures/*.lhs"    $ myMakeHTML
+    match "lectures/*.md"    $ myMakeHTML
     -- match "slides/*"      $ myMakeHTML
     match "homeworks/*"   $ myMakeHTML
     match "final/*"       $ myMakeHTML
