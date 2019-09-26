@@ -4,12 +4,12 @@ title: Lectures
 
 **Date**          **Topic**                                                      **Notes**
 ----------------- -------------------------------------------------------------- ------------------------
-08/27/19          Git Cheat Sheet                                                [lec0]
-08/27/19          Introduction to GHCI: Haskell Syntax, Types, and more          
-08/29/19-09/12/19 Syntax: Grammars, Iffy-Lang, Inference Rules, Evaluation       [pdf][lec1]
-09/03/19-09/26/19 Functions, Pattern Matching, and Polymorphism                  [html][lec2] [hs][lhs2]
-09/12/19-09/19/19 Functional Iffy: Free/Bound Variables, Substiution, Evaluation [pdf][lec1]
-                  Data Types                                                     Book Chapter 8.1-8.3
+08/27             Git Cheat Sheet                                                [lec0]
+08/27             Introduction to GHCI: Haskell Syntax, Types, and more          Chapter 1.1-2.7
+08/29-09/12       Syntax: Grammars, Iffy-Lang, Inference Rules, Evaluation       [pdf][lec1]
+09/03-09/26       Functions, Pattern Matching, and Polymorphism                  [html][lec2] [hs][lhs2]
+09/12-09/19       Functional Iffy: Free/Bound Variables, Substiution, Evaluation [pdf][lec1]
+09/26-            Data Types                                                     Chapter 8.1-8.3
                   Quick Check                                                    [html][lec3] [hs][lhs3]
                   Introduction to Monads                                         [html][lec8] [hs][lhs8]
                   Locally-Closed Binding Representation                          [html][lec7] [hs][lhs1]
