@@ -1,8 +1,0 @@
-resolver: nightly-2016-05-17
-
-flags: {}
-
-packages:
-  - '.'
-
-extra-deps: []

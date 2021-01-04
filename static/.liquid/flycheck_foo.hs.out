@@ -1,3 +1,0 @@
-CRASH: Invalid Source
- /Users/rjhala/teaching/230-wi15/web/static/flycheck_foo.hs:1:6-9: Error: GHC Error
-     Malformed head of type or class declaration: info

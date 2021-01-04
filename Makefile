@@ -1,31 +1,28 @@
-RSYNC=$(shell pwd)/sync.sh
-SITEPATH=/Users/heades/website/heades.github.io/CSCI3300/
+defaults := defaults/site
+latex_defaults := defaults/syllabus
+md_dir := markdown
+md_sources := $(wildcard $(md_dir)/*.md)
+html_dir := plweb
+html_targets := $(subst $(md_dir), $(html_dir),$(subst .md,.html,$(md_sources)))
+html_layout := ./layouts/site.html
+latex_layout := ./layouts/syllabus.latex
 
-PANDOCHANDOUT=pandoc --highlight-style=tango --from=markdown+lhs --chapters --latex-engine=pdflatex --template=templates/handout.latex --filter templates/inside.hs
+sitepath=/Users/heades/website/heades.github.io/plweb
 
-lhsObjects  := $(wildcard lectures/*.lhs)
-pdfObjects  := $(patsubst lectures/%.lhs,pdf/%.pdf,$(wildcard lectures/*.lhs))
+all : $(html_targets) $(html_dir)/includes/syllabus.pdf
 
-all: website 
-	stack exec -- website rebuild
-	cp css/syntax-rj.css _site/css/syntax.css
-	cp lectures/*.lhs _site/lectures/
+$(html_dir)/%.html : $(md_dir)/%.md Makefile $(html_layout)
+	pandoc -s -d $(defaults) -o $@ $<
 
-website: src/Site.hs
-	stack build
+$(html_dir)/includes/syllabus.pdf : $(md_dir)/index.md $(latex_layout)
+	pandoc -s -d $(latex_defaults) -o $(html_dir)/includes/syllabus.pdf $(md_dir)/index.md
 
-clean:
-	rm -rf *.hi *.o .*.swp .*.swo website _site/ _cache/
+serve :
+	http-server
 
-update: all
-	cp -R _site/* $(SITEPATH)
-	cd $(SITEPATH) && git add . && git commit -a -m 'Updating CSCI:3300 Website.' && git push
+push: all
+	cp -R $(html_dir)/* $(sitepath)
+	cd $(sitepath) && git add . && git commit -a -m 'Updating PL Website.' && git push
 
-slides:
-	cd slides && make && cd ..
-
-handouts: $(pdfObjects)
-
-pdf/%.pdf: lectures/%.lhs
-	-$(PANDOCHANDOUT) $? -o $@ 
-
+clean :
+	rm -f plweb/*.html
