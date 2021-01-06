@@ -75,9 +75,9 @@ A perfect score is $200$ total points:
 
 - (25\%) 16 weekly video lecture quizzes; each lecture.
 
-- (25\%) A take-home midterm exam: 02/22. 
+- (25\%) A take-home midterm exam released on 02/22 and due on 02/24 by 11:59pm.
 
-- (25\%) A take-home final exam: 05/03. 
+- (25\%) A take-home final exam released on 4/28 and due on 5/4 by 4:00pm.
 
 No scores will be curved throughout the semester.  Please use the
 following scoring tables:
