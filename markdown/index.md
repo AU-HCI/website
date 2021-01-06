@@ -82,16 +82,6 @@ A perfect score is $200$ total points:
 No scores will be curved throughout the semester.  Please use the
 following scoring tables:
 
-- Undergraduates:
-
-  + A : $80\% - 100\%$
-  + B : $70\% - 79\%$
-  + C : $60\% - 69\%$
-  + D : $50\% - 59\%$
-  + F : $00\% - 49\%$
-
-- Graduates:
-
   + A : $88\% - 100\%$
   + B : $78\% - 87\%$
   + C : $68\% - 77\%$
