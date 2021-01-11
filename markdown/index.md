@@ -65,7 +65,7 @@ away from the class.
 ### Specialized Goals
 
 Specialized goals amount to the content of the course.  This can be
-found in the [Course Schedule](/lectures.html ).    
+found in the [Course Schedule](/plweb/lectures.html ).    
 
 ## Graded Work
 

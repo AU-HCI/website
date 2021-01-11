@@ -20,6 +20,9 @@ $(html_dir)/includes/syllabus.pdf : $(md_dir)/index.md $(latex_layout)
 serve :
 	http-server
 
+watch :
+	find $(md_dir) | entr -p -c 'make'
+
 push: all
 	cp -R $(html_dir)/* $(sitepath)
 	cd $(sitepath) && git add . && git commit -a -m 'Updating PL Website.' && git push

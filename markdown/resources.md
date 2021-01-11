@@ -2,6 +2,11 @@
 title: Resources
 ---
 
+## Tutorials:
+
+- [Installing and using Git](/plweb/git.html) 
+
+
 ## Books/Papers
 
 - J.-Y. Girard, Y. Lafont, and P. Taylor.
