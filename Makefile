@@ -26,3 +26,4 @@ push: all
 
 clean :
 	rm -f plweb/*.html
+	rm -rf $(sitepath)/*

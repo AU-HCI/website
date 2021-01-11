@@ -73,7 +73,7 @@ A perfect score is $200$ total points:
 
 - (25\%) 7 10-point graded homework assignments.
 
-- (25\%) 16 weekly video lecture quizzes; each lecture.
+- (25\%) 16 weekly reading/video quizzes; each lecture.
 
 - (25\%) A take-home midterm exam released on 02/22 and due on 02/24 by 11:59pm.
 
@@ -90,7 +90,7 @@ following scoring tables:
 
 ## Course Communication
 
-This course has a slack channel.  Please joint it here: [Slack Registration](https://join.slack.com/t/augustaspace/shared_invite/zt-kqtl6qfk-rjR976X_VjRj8w3nT7dX_w ) 
+This course has a slack channel.  Please join it here: [Slack Registration](https://join.slack.com/t/augustaspace/shared_invite/zt-kqtl6qfk-rjR976X_VjRj8w3nT7dX_w ) 
 
 All course discussion and annoucements will take place on Slack.  The only time Slack should not be used is when discussing grades.  I will not respond to questions via email unless they are grade specific.
 
