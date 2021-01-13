@@ -7,12 +7,12 @@ repo for short) that you will use to turn in all assignments.
 
 # What is Git?
 
-Git is a textfile revision system.  One uses it to mangage revisions
+Git is a textfile revision system.  One uses it to manage revisions
 of text files between multiple people using a single set of files.
 Git will keep track of who made which changes and when (the revision
 history), provide tools for undoing and redoing changes (handling
 merging), allow remote access to the repository, and even support
-multiple timelines of the files (branching).
+multiple time lines of the files (branching).
 
 In this short tutorial I'll go through everything you need to know in
 order to use Git in this course.
@@ -35,21 +35,21 @@ the repository on Github for you to have as well.
 First we need to get Git on your computer if it's not there already.
 If you are running Linux, you are done, and can skip this section.
 Otherwise, Mac OS X users need only open the Terminal app, and type
-`git` at the commandline.  If Git's not install already, then it will
+`git` at the command line.  If Git's not install already, then it will
 tell you what you need to do.
 
 So if you're a Windows user, then please install Git from
 [here](https://git-scm.com/ ).  This is all you need to install to use
 Git in this course.
 
-This will install a commandline interface to Git called GitBash, and
+This will install a command line interface to Git called GitBash, and
 it looks like [this](https://gitforwindows.org/img/gw1.png ).  I like
-using the commandline, because the same commands work no matter which
+using the command line, because the same commands work no matter which
 operating system you are using.  Thus, I can help everyone using the
 same solutions to problems we run into.
 
 Throughout the remainder of this tutorial I will say "open the
-commandline" to mean open either the terminal on Unix-based systems
+command line" to mean open either the terminal on Unix-based systems
 (Linux, Mac OS X, etc) or GitBash on Windows.
 
 # Setting up Git
@@ -57,7 +57,7 @@ commandline" to mean open either the terminal on Unix-based systems
 We now need to setup Git on your computer so that it knows who you
 are. This is independent of your Github username and email, and is
 setting up your local Git install to record your name and email when
-telling Git about your revistions.
+telling Git about your revisions.
 
 - Your name:
 
@@ -90,7 +90,7 @@ is hosted on Github, to your computer so that you can use it.
 
 First create a folder on your computer that you will use to keep
 everything in this class in.  I'll call it `pl_dir` in this tutorial.
-Then open the commandline and navigate to `pl_dir`:
+Then open the command line and navigate to `pl_dir`:
 
 ```
 > cd path_to_pl_dir/pl_dir
@@ -126,7 +126,7 @@ working directory.  If you see your repo, then you are good to
 go. Otherwise an error happened, and so try again, but if you can't
 figure it out, then ask on Slack.
 
-You only ever need to clone a repoistory once.  Unless you delete the
+You only ever need to clone a repository once.  Unless you delete the
 folder you will never have to clone this repository again.
 
 # Editing files in your repo
@@ -134,7 +134,7 @@ folder you will never have to clone this repository again.
 A Git repo is just a special directory that Git knows about.  Once
 it's cloned to your computer you can treat it as a standard folder on
 your computer that is full of textfiles that are managed by Git.  The
-only time you need to use the commandline or Git is when you are ready
+only time you need to use the command line or Git is when you are ready
 to tell Git about the changes you've made.
 
 So to get an idea of how this works.  Using the file explorer (Finder
@@ -160,7 +160,7 @@ Now we are going to tell Git about your changes, commit them to the
 revision history, and then push them to Github where I can see and get
 your changes too.
 
-Open the commandline and move into the the `git_tutorial` folder:
+Open the command line and move into the the `git_tutorial` folder:
 
 ```
 > cd path_to_pl_dir/pl_dir/git_tutorial
@@ -208,7 +208,7 @@ subscribes to your repository can get your changes.
 
 The last Git operation you will need for this course is a means of
 fetching or __pulling__ recent changes by people other than you from
-Github.  For example, I'll be adding your assingments to your
+Github.  For example, I'll be adding your assignments to your
 repository throughout the semester, and so, you will need to get them
 from Github into your repository.
 
@@ -219,7 +219,7 @@ First, move into your repository:
 ```
 
 Make sure you have no modified files Git doesn't know about, because
-you have never commited them.  Do the following:
+you have never committed them.  Do the following:
 
 ```
 > git status
@@ -258,15 +258,15 @@ To pull all changes from Github into your local repository do:
 ```
 
 within your repository.  Note that all Git commands must be within
-your repoistory.  That is, your present working directory must be your
+your repository.  That is, your present working directory must be your
 repository; in this tutorial it has been `pl_dir`.
 
-# Recommended workflow
+# Recommended work flow
 
-When using Git for this course and completeing assignments I recommend
-the following workflow:
+When using Git for this course and completing assignments I recommend
+the following work flow:
 
-1. Open the commandline and move into your repository using the `cd`
+1. Open the command line and move into your repository using the `cd`
    command.
    
 2. Pull all new changes from Github using `git pull`.
@@ -279,7 +279,7 @@ the following workflow:
    clean. 
    
 5. After you commit push your changes to Github using `git push`.  Do
-   this everytime you're done working too.  You can push as many times
+   this every time you're done working too.  You can push as many times
    as you like.  Committing and pushing every time your done working
    on your assignments keeps Git happy.
    

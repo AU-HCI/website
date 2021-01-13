@@ -5,8 +5,8 @@ toc: false
 
 ## Tutorials
 
+- [Setting up Coq](/plweb/coq.html) 
 - [Installing and using Git](/plweb/git.html) 
-
 
 ## Books/Papers
 
