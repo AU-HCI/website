@@ -218,17 +218,38 @@ First, move into your repository:
 > cd path_to_pl_dir/pl_dir
 ```
 
-Make sure you have no __untracked__ changes.  These are changes that
-Git doesn't know about, because you have never commited them.  Do the
-following:
+Make sure you have no modified files Git doesn't know about, because
+you have never commited them.  Do the following:
 
 ```
 > git status
 
 On branch main
+Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean
 ```
+
+If you see the above message, then you are good to go, all changes
+have been committed to your revision history. If you see something
+that looks like:
+
+```
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   markdown/git.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+Then you have untracked changes that need to be committed. Go back to
+the previous section and commit your changes before proceeding.  There
+can be no non-committed changes when we pull from Github, because Git
+will merge all changes together.
 
 To pull all changes from Github into your local repository do:
 
@@ -240,5 +261,28 @@ within your repository.  Note that all Git commands must be within
 your repoistory.  That is, your present working directory must be your
 repository; in this tutorial it has been `pl_dir`.
 
+# Recommended workflow
 
+When using Git for this course and completeing assignments I recommend
+the following workflow:
 
+1. Open the commandline and move into your repository using the `cd`
+   command.
+   
+2. Pull all new changes from Github using `git pull`.
+
+3. Do your work by making changes to the files.
+
+4. After you are done working commit your changes using `git commit -a
+   -m 'MESSAGE'`. Commit after you work every time no matter if your
+   done with your assignment or not.  This keeps your repository
+   clean. 
+   
+5. After you commit push your changes to Github using `git push`.  Do
+   this everytime you're done working too.  You can push as many times
+   as you like.  Committing and pushing every time your done working
+   on your assignments keeps Git happy.
+   
+6. Bob's your uncle!
+
+And that's all you need to know about Git for this class.

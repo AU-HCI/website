@@ -1,8 +1,9 @@
 ---
 title: Resources
+toc: false
 ---
 
-## Tutorials:
+## Tutorials
 
 - [Installing and using Git](/plweb/git.html) 
 

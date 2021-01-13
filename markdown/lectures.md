@@ -1,5 +1,6 @@
 ---
 title: Lectures
+toc: false
 ---
 
 ## Schedule
