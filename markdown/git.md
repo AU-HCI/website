@@ -225,6 +225,10 @@ following:
 ```
 > git status
 
+On branch main
+
+nothing to commit, working tree clean
+```
 
 To pull all changes from Github into your local repository do:
 
