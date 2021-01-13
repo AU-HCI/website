@@ -24,7 +24,7 @@ watch :
 	find $(md_dir) | entr -p -c 'make'
 
 push: all
-	cp -R $(html_dir)/* $(sitepath)
+	cp -vR $(html_dir)/* $(sitepath)
 	cd $(sitepath) && git add . && git commit -a -m 'Updating PL Website.' && git push
 
 clean :

@@ -17,6 +17,19 @@ multiple timelines of the files (branching).
 In this short tutorial I'll go through everything you need to know in
 order to use Git in this course.
 
+# The difference between Git and Github
+
+Git is a command-line tool that is installed on your computer to
+manage Git repositories of textfiles.  When using Git on your computer
+the repositories are local, but Git has the ability to share them
+remotely with others.  This is where Github comes in.
+
+Github is a hosting site for Git repositories.  If you want to share
+your repo with a team of other people then you can host it on Github
+and allow others to subscribe to it. Github allows them be able to
+download your repositories, change it, and even submit changes back to
+the repository on Github for you to have as well.
+
 # Installing Git
 
 First we need to get Git on your computer if it's not there already.
@@ -41,7 +54,10 @@ commandline" to mean open either the terminal on Unix-based systems
 
 # Setting up Git
 
-We now need to setup Git so that it knows who you are.  
+We now need to setup Git on your computer so that it knows who you
+are. This is independent of your Github username and email, and is
+setting up your local Git install to record your name and email when
+telling Git about your revistions.
 
 - Your name:
 
@@ -65,19 +81,21 @@ This completes the Git basic setup.
 
 # Cloning your repo
 
-At this point you have emailed me with your
+__At this point you have emailed me with your
 [Github](https://www.github.com ) login and I have replied with the
-link to your Git repo.  If not, then please do this step first.
+link to your Git repo.  If not, then please do this step first.__
 
-At this point we need to __clone__ your repo from Github to your
-computer.  To do this open first create a folder on your computer that
-you will use to keep everything in this class in.  I'll call it
-`pl_dir` in this tutorial.  Then open the commandline and navigate to
-`pl_dir`:
+Now we will __clone__ your repo that I have created for you, and that
+is hosted on Github, to your computer so that you can use it.  
+
+First create a folder on your computer that you will use to keep
+everything in this class in.  I'll call it `pl_dir` in this tutorial.
+Then open the commandline and navigate to `pl_dir`:
 
 ```
 > cd path_to_pl_dir/pl_dir
 ```
+
 At this point you have changed your working directory to `pl_dir`.
 You can check that this worked by running the command:
 
@@ -85,7 +103,7 @@ You can check that this worked by running the command:
 > pwd
 ```
 
-This stands for "present working directory".  
+This stands for "present working directory".
 
 Now that your working directory is `pl_dir` we can clone your course
 repository using the following command:
@@ -108,6 +126,8 @@ working directory.  If you see your repo, then you are good to
 go. Otherwise an error happened, and so try again, but if you can't
 figure it out, then ask on Slack.
 
+You only ever need to clone a repoistory once.  Unless you delete the
+folder you will never have to clone this repository again.
 
 # Editing files in your repo
 
@@ -129,9 +149,9 @@ Move into `sf_src` by double clicking on it, and then move into
 source code.  Double click `index.html`.  As you can see these are
 just files.
 
-When you are working on your assignments you can use your graphical
-based means of exploring files and folders, and simply treat the files
-as normal files.  Open them with editors and save them, etc.
+When you are working on your assignments you can use your computers
+graphical based means of exploring files and folders, and simply treat
+the files as normal files.  Open them with editors and save them, etc.
 
 Let's do an example.  Open `git_tutorial/example.txt` in your favorite
 text editor.  Answer the question and save it.
@@ -164,7 +184,8 @@ You can see the revision history using the command:
 
 This lists all the changes by everyone who've made changes to the
 files in your repo.  For example, you will see mine listed as well,
-and I will see yours.
+and I will see yours.  Notice your name and email are showing up, this
+is the result of the setup we did earlier.
 
 The command `git commit -a -m` says you want to commit each change to
 the files in my working directory using the commit message provided;
@@ -172,4 +193,48 @@ we used `'Answered the question'`.  This message should be a detailed
 description of the changes you have made.  As you can see in the
 revision history when using `git log` this shows up in the history.
 I'll read these to see what you have done.
+
+You are now ready to share your changes with Github.  To do this,
+__push__ your changes upstream:
+
+```
+> git push
+```
+
+This sends all of your recent commits to Github so that everyone who
+subscribes to your repository can get your changes.
+
+# Fetching changes from Github
+
+The last Git operation you will need for this course is a means of
+fetching or __pulling__ recent changes by people other than you from
+Github.  For example, I'll be adding your assingments to your
+repository throughout the semester, and so, you will need to get them
+from Github into your repository.
+
+First, move into your repository:
+
+```
+> cd path_to_pl_dir/pl_dir
+```
+
+Make sure you have no __untracked__ changes.  These are changes that
+Git doesn't know about, because you have never commited them.  Do the
+following:
+
+```
+> git status
+
+
+To pull all changes from Github into your local repository do:
+
+```
+> git pull
+```
+
+within your repository.  Note that all Git commands must be within
+your repoistory.  That is, your present working directory must be your
+repository; in this tutorial it has been `pl_dir`.
+
+
 
