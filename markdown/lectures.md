@@ -10,7 +10,7 @@ toc: false
 
 - Week 2 (01/18 - 01/22): [(Vol 1) Proof by Induction](https://softwarefoundations.cis.upenn.edu/lf-current/Induction.html)
   - Lecture Video: TBA
-  - Homework 1: TBA
+  - Homework 1: 1/27
   - No class 01/18, but we have class on 01/20.  
   
 - Week 3 (01/25 - 01/29): [(Vol 1) Working with Structured Data](https://softwarefoundations.cis.upenn.edu/lf-current/Lists.html)
