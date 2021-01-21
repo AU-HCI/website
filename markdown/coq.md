@@ -225,8 +225,10 @@ screens may be different.
        The box on your screen will be empty, but:
        
        - Windows: enter `C:/Coq/bin`
-       - Mac OS X: enter `~/.opam/default/bin`
+       - Mac OS X: enter `/Users/username/.opam/default/bin`
+       - Linux: enter `/home/username/.opam/default/bin`
        
+       In the above replace `username` with your username on your computer. 
        There is no save button, because these settings are saved
        automatically.
        
