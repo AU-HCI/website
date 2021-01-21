@@ -94,6 +94,34 @@ instructions:
    > brew install opam
    ...
    ```
+   
+   If you already have homebrew installed (which means you skipped the
+   previous instruction), you might get an error of the form:
+   
+   ```
+   Error: homebrew-core is a shallow clone.
+   ```
+   
+   This means that your homebrew is out of date.  To update brew and
+   fix this problem run this command:
+   
+   ```
+   > git -C "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core" fetch --unshallow
+   ```
+   
+   You might also get an error:
+   
+   ```
+   Error: homebrew-cask is a shallow clone.
+   ```
+   
+   To update brew and fix this problem run this command:
+   
+   ```
+   git -C "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask" fetch --unshallow
+   ```
+   
+   Then proceed with the above installation again.
 
 4. Use opam to install Coq:
 
