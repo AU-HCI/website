@@ -14,7 +14,7 @@ toc: false
 - Week 3 (01/25 - 01/29): [(Vol 1) Working with Structured Data](https://softwarefoundations.cis.upenn.edu/lf-current/Lists.html)
   
 - Week 4 (02/01 - 02/05): [(Vol 1) Polymorphism and Higher-Order Functions](https://softwarefoundations.cis.upenn.edu/lf-current/Poly.html)
-  - Homework 2: TBA
+  - Homework 2: 2/10
   
 - Week 5 (02/08 - 02/12): [(Vol 1) Tactics](https://softwarefoundations.cis.upenn.edu/lf-current/Tactics.html)
   
