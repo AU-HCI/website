@@ -88,6 +88,11 @@ following scoring tables:
   + D : $58\% - 67\%$
   + F : $0\% - 57\%$
 
+## Turning in Homework
+
+All homework is to be turned in via your private Git repository by
+Friday at 11:59pm the week after the homework is released.
+
 ## Course Communication
 
 This course has a slack channel.  Please join it here: [Slack Registration](https://join.slack.com/t/augustaspace/shared_invite/zt-kqtl6qfk-rjR976X_VjRj8w3nT7dX_w ) 

@@ -21,7 +21,7 @@ serve :
 	http-server
 
 watch :
-	find $(md_dir) | entr -p -c 'make'
+	find $(md_dir) | entr -c 'make'
 
 push: all
 	cp -vR $(html_dir)/* $(sitepath)
