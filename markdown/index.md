@@ -90,8 +90,13 @@ following scoring tables:
 
 ## Turning in Homework
 
-All homework is to be turned in via your private Git repository by
-Friday at 11:59pm the week after the homework is released.
+All homework is to be turned in via your private Git repository.
+There are two deadlines for this course:
+
+- Soft: By 11:59pm on the Friday after the homework is released.
+- Hard: By 11:59pm on the Tuesday thirteen days after the homework is released.
+
+The precise dates will be on each homework assignment.
 
 ## Course Communication
 
