@@ -16,14 +16,14 @@ toc: false
 - Week 4 (02/01 - 02/05): [(Vol 1) Working with Structured Data](https://softwarefoundations.cis.upenn.edu/lf-current/Lists.html)
   - Homework 2: 2/10
   
-- Week 5 (02/08 - 02/12): [(Vol 1) Polymorphism and Higher-Order Functions](https://softwarefoundations.cis.upenn.edu/lf-current/Poly.html)
+- Week 5 (02/08 - 02/12): Class was cancelled.
   
-- Week 6 (02/15 - 02/19): [(Vol 1) Tactics](https://softwarefoundations.cis.upenn.edu/lf-current/Tactics.html)
+- Week 6 (02/15 - 02/19): [(Vol 1) Polymorphism and Higher-Order Functions](https://softwarefoundations.cis.upenn.edu/lf-current/Poly.html) 
   - Homework 3: TBA
   
 - Week 7 (02/22 - 02/26): Midterm Exam
   
-- Week 8 (03/01 - 03/05): [(Vol 1) Logic in Coq](https://softwarefoundations.cis.upenn.edu/lf-current/Logic.html)
+- Week 8 (03/01 - 03/05): [(Vol 1) Tactics](https://softwarefoundations.cis.upenn.edu/lf-current/Tactics.html) / [(Vol 1) Logic in Coq](https://softwarefoundations.cis.upenn.edu/lf-current/Logic.html)
   
 - Week 9 (03/08 - 03/12): [(Vol 1) Inductively Defined Propositions](https://softwarefoundations.cis.upenn.edu/lf-current/IndProp.html)
   - Homework 4: TBA
