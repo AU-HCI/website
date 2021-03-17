@@ -3,6 +3,10 @@ title: Resources
 toc: false
 ---
 
+## Lecture Notes
+
+- [IffyLang : Syntax and Evaluation](/plweb/includes/lecture-notes/IffyLang-Syntax-Eval.pdf)
+
 ## Tutorials
 
 - [Installing and using Git](/plweb/git.html) 

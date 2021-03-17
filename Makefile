@@ -8,6 +8,7 @@ html_layout := layouts/site.html
 latex_layout := layouts/syllabus.latex
 
 sitepath=/Users/heades/website/heades.github.io/plweb
+notespath := lecture-notes
 
 all : $(html_targets) $(html_dir)/includes/syllabus.pdf
 
@@ -25,7 +26,8 @@ watch :
 
 push: all
 	cp -vR $(html_dir)/* $(sitepath)
-	cd $(sitepath) && git add . && git commit -a -m 'Updating PL Website.' && git push
+	cd $(notespath) && make
+	cd $(sitepath) && git add . && git commit -a -m 'Updating PL Website.' && git push	
 
 clean :
 	rm -f plweb/*.html
