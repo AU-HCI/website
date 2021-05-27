@@ -2,7 +2,7 @@
 title: Syllabus
 syllabus_subtitle: Programming Languages (CSCI:3300/CSCI:5300)
 author: Harley Eades
-date: Spring 2021
+date: Summer 2021
 ---
 
 ## Staff
@@ -69,15 +69,13 @@ found in the [Course Schedule](/plweb/lectures.html ).
 
 ## Graded Work
 
-A perfect score is $200$ total points:
+A perfect score is $100$ total points:
 
-- (25\%) 7 10-point graded homework assignments.
+- (40\%) Weekly 10-point graded homework assignments.
 
-- (25\%) 16 weekly reading/video quizzes; each lecture.
+- (30\%) A take-home midterm exam.
 
-- (25\%) A take-home midterm exam released on 02/22 and due on 02/24 by 11:59pm.
-
-- (25\%) A take-home final exam released on 4/28 and due on 5/4 by 4:00pm.
+- (30\%) A take-home final exam.
 
 No scores will be curved throughout the semester.  Please use the
 following scoring tables:
