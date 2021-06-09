@@ -13,7 +13,8 @@ toc: false
 - Week 3 (6/7-6/11): [(Vol 1) Polymorphism and Higher-Order Functions](https://softwarefoundations.cis.upenn.edu/lf-current/Poly.html) 
     - Homework 2: 6/11
 
-- Week 4 (6/14-6/18):
+- Week 4 (6/14-6/18): [(Vol 1) More Basic Tactics (Tactics)](https://softwarefoundations.cis.upenn.edu/lf-current/Tactics.html) and [Logic in Coq](https://softwarefoundations.cis.upenn.edu/lf-current/Logic.html)
+  - Homework 3: 6/18
   
 - Week 5 (6/21-6/25):
   - Midterm Exam: TBA
