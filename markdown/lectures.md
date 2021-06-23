@@ -16,8 +16,8 @@ toc: false
 - Week 4 (6/14-6/18): [(Vol 1) More Basic Tactics (Tactics)](https://softwarefoundations.cis.upenn.edu/lf-current/Tactics.html) and [Logic in Coq](https://softwarefoundations.cis.upenn.edu/lf-current/Logic.html)
   - Homework 3: 6/18
   
-- Week 5 (6/21-6/25):
-  - Midterm Exam: TBA
+- Week 5 (6/21-6/25): Midterm Exam
+  - Midterm Exam: 6/30
   
 - Week 6 (5/28-7/2):
   
