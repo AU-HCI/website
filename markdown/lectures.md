@@ -19,18 +19,15 @@ toc: false
 - Week 5 (6/21-6/25): Midterm Exam
   - Midterm Exam: 6/30
   
-- Week 6 (5/28-7/2):
+- Week 6 (5/28-7/2): Break
   
-- Week 7 (7/5-7/9):
+- Week 7 (7/5-7/9): [The Curry-Howard Correspondence](https://softwarefoundations.cis.upenn.edu/lf-current/ProofObjects.html ) 
+  - Homework 4: 7/14
   
-- Week 8 (7/12-7/16):
+- Week 8 (7/12-7/16): [Induction Principles](https://softwarefoundations.cis.upenn.edu/lf-current/IndPrinciples.html ) 
+  - Homework 5: 7/21
   
-- Week 9 (7/19-7/23):
-  - Final Exam: TBA
+- Week 9 (7/19-7/23): [Simple Imperative Programs](https://softwarefoundations.cis.upenn.edu/lf-current/Imp.html ) 
 
-<!-- Extras if time:
+  - Final Exam: 7/19 - 7/23
 
-- [(Vol 2) More on the Simply Typed Lambda-Calculus](https://softwarefoundations.cis.upenn.edu/plf-current/MoreStlc.html)
-- [(Vol 2) Typing Mutable References](https://softwarefoundations.cis.upenn.edu/plf-current/References.html)
-
--->
