@@ -2,7 +2,7 @@
 title: Syllabus
 syllabus_subtitle: Programming Languages (CSCI:3300/CSCI:5300)
 author: Harley Eades
-date: Summer 2021
+date: Spring 2022
 ---
 
 ## Staff
@@ -14,13 +14,9 @@ date: Summer 2021
 ## Description
 
 In this course we will be discussing the theoretical design and the
-practical implementation of functional programming languages.  These
-type of languages allow us to study programming language features from
-a wide range of programming languages in a simplified setting.  We
-will also be learning the advanced proof system called
-[Coq](https://coq.inria.fr/).
+practical implementation of programming languages, and a features from
+a wide range of programming languages in a simplified setting.
 
-- [Book](https://softwarefoundations.cis.upenn.edu/)
 - [Course Calendar](https://www.google.com/calendar/embed?src=3ekrviscan57vh4raoblif5gbg%40group.calendar.google.com&ctz=America/New_York )
 
 ## Prerequisites
@@ -71,11 +67,11 @@ found in the [Course Schedule](/plweb/lectures.html ).
 
 A perfect score is $100$ total points:
 
-- (40\%) Weekly 10-point graded homework assignments.
+- (60\%) 6 graded homework assignments.
 
-- (30\%) A take-home midterm exam.
+- (20\%) A take-home midterm exam.
 
-- (30\%) A take-home final exam.
+- (20\%) A take-home final exam.
 
 No scores will be curved throughout the semester.  Please use the
 following scoring tables:
@@ -91,14 +87,14 @@ following scoring tables:
 All homework is to be turned in via your private Git repository.
 There are two deadlines for this course:
 
-- Soft: By 11:59pm on the Friday after the homework is released.
-- Hard: By 11:59pm on the Tuesday thirteen days after the homework is released.
+- Soft: By 11:59pm on the Wednesday after the homework is released.
+- Hard: By 11:59pm on the Friday nine days after the homework is released.
 
 The precise dates will be on each homework assignment.
 
 ## Course Communication
 
-This course has a slack channel.  Please join it here: [Slack Registration](https://join.slack.com/t/augustaspace/shared_invite/zt-kqtl6qfk-rjR976X_VjRj8w3nT7dX_w ) 
+This course has a slack channel.  Please join via the email sent out to you.
 
 All course discussion and annoucements will take place on Slack.  The only time Slack should not be used is when discussing grades.  I will not respond to questions via email unless they are grade specific.
 
