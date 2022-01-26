@@ -7,32 +7,32 @@ toc: false
 
 - Week 1 (01/10 - 01/13):
   - M: Introducion to the course
-  - W: The basic structure of programming langauges
+  - W: Class was canceled.
     
 - Week 2 (01/17 - 01/19):
   - M: No class.
-  - W: Syntax and Evaluation
+  - W: The basic structure of programming langauges
   
 - Week 3 (01/24 - 01/26): 
-  - M: Syntax and Evaluation
-  - W: Mini Swift: Syntax 
-  - Homework 1: TBA
-  
+  - M: Syntax
+  - W: Class was cancled
+    
 - Week 4 (01/31 - 02/02): 
-  - M: Mini Swift: Evaluation
-  - W: Typing Programs
+  - M: Mini Swift: Syntax
+  - W: Evaluation
   
 - Week 5 (02/07 - 02/9):
-  - M: Typing Programs
-  - W: Mini Swift: Adding Types
-  - Homework 2: TBA
+  - M: Mini Swift: Evaluation
+  - W: Typing Programs
+  - Homework 1: TBA
   
 - Week 6 (02/14 - 02/16): 
   - M: Mini Swift: Adding Types
   - W: Mini Swift: Adding Types
+  - Homework 2: TBA
   
 - Week 7 (02/21 - 02/23):   
-  - Midterm week; due your exam.
+  - Midterm week; do your exam.
   - Midterm Exam: TBA (Due 02/23 by 11:59pm)
   
 - Week 8 (02/28 - 03/01): Midterm Week

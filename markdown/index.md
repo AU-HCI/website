@@ -65,8 +65,6 @@ found in the [Course Schedule](/plweb/lectures.html ).
 
 ## Graded Work
 
-A perfect score is $100$ total points:
-
 - (60\%) 6 graded homework assignments.
 
 - (20\%) A take-home midterm exam.
