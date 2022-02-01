@@ -12,19 +12,22 @@ toc: false
 - Week 2 (01/17 - 01/19):
   - M: No class.
   - W: The basic structure of programming langauges
+    - Slides: [pdf](includes/lecture-notes/basic-structure-of-PLs.pdf)
   
 - Week 3 (01/24 - 01/26): 
   - M: Syntax
+    - Slides: [pdf](includes/lecture-notes/syntax.pdf)
   - W: Class was cancled
     
 - Week 4 (01/31 - 02/02): 
   - M: Mini Swift: Syntax
+    - Mini Swift Spec: [pdf](includes/MiniSwift/MiniSwift-Spec.pdf)
   - W: Evaluation
   
 - Week 5 (02/07 - 02/9):
   - M: Mini Swift: Evaluation
   - W: Typing Programs
-  - Homework 1: TBA
+  - Homework 1: Complete the Git tutorial [here](plweb/git.html)
   
 - Week 6 (02/14 - 02/16): 
   - M: Mini Swift: Adding Types
