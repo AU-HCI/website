@@ -22,16 +22,18 @@ toc: false
 - Week 4 (01/31 - 02/02): 
   - M: Mini Swift: Syntax
     - Mini Swift Spec: [pdf](includes/MiniSwift/MiniSwift-Spec.pdf)
-  - W: Evaluation
+  - W: Evaluation Part 1
+    - Slides: [pdf](includes/lecture-notes/evaluation-part-1.pdf)
   
 - Week 5 (02/07 - 02/9):
-  - M: Mini Swift: Evaluation
-  - W: Typing Programs
-  - Homework 1: Complete the Git tutorial [here](plweb/git.html)
+  - M: Evaluation Part 1: Multistep Evaluation
+  - W: Function Definitions and Syntax Trees
+    - Slides: [pdf](includes/lecture-notes/funct-defs-syntax-trees.pdf)  
+  - Homework 1: Complete the Git tutorial [here](git.html)
   
 - Week 6 (02/14 - 02/16): 
-  - M: Mini Swift: Adding Types
-  - W: Mini Swift: Adding Types
+  - M: Binding and Substitution
+  - W: Evaluation Part 2: Function Definitions
   - Homework 2: TBA
   
 - Week 7 (02/21 - 02/23):   
