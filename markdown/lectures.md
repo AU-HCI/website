@@ -34,19 +34,21 @@ toc: false
 - Week 6 (02/14 - 02/16): 
   - M: Binding and Substitution
   - W: Evaluation Part 2: Function Definitions
-  - Homework 2: TBA
+  - Homework 2: Find it in your repo.
   
 - Week 7 (02/21 - 02/23):   
   - Midterm week; do your exam.
   - Midterm Exam: TBA (Due 02/23 by 11:59pm)
   
 - Week 8 (02/28 - 03/01): Midterm Week
-  - M: Functional Programming
-  - W: Functional Programming
+  - M: Midterm Exam Solitions and Discussion    
+  - W: Evaluation Part 2: Function Definitions
+    - Slides: [pdf](includes/lecture-notes/funct-defs-syntax-trees.pdf)  
   
 - Week 9 (03/07 - 03/09):
-  - M: Mini Swift: Adding Higher-Order Functions
-  - W: Mini Swift: Adding Higher-Order Functions
+  - M: Evaluation Part 2: Function Definitions
+    - Slides: [pdf](includes/lecture-notes/funct-defs-eval.pdf)  
+  - W: Functional Programming
     
 - Week 10 (03/14 - 03/16): 
   - M: Program Organization
