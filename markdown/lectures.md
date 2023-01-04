@@ -5,83 +5,118 @@ toc: false
 
 ## Schedule
 
-- Week 1 (01/10 - 01/13):
-  - M: Introducion to the course
-  - W: Class was canceled.
-    
-- Week 2 (01/17 - 01/19):
-  - M: No class.
-  - W: The basic structure of programming langauges
-    - Slides: [pdf](includes/lecture-notes/basic-structure-of-PLs.pdf)
-  
-- Week 3 (01/24 - 01/26): 
-  - M: Syntax
-    - Slides: [pdf](includes/lecture-notes/syntax.pdf)
-  - W: Class was cancled
-    
-- Week 4 (01/31 - 02/02): 
-  - M: Mini Swift: Syntax
-    - Mini Swift Spec: [pdf](includes/MiniSwift/MiniSwift-Spec.pdf)
-  - W: Evaluation Part 1
-    - Slides: [pdf](includes/lecture-notes/evaluation-part-1.pdf)
-  
-- Week 5 (02/07 - 02/9):
-  - M: Evaluation Part 1: Multistep Evaluation
-  - W: Function Definitions and Syntax Trees
-    - Slides: [pdf](includes/lecture-notes/funct-defs-syntax-trees.pdf)  
-  - Homework 1: Complete the Git tutorial [here](git.html)
-  
-- Week 6 (02/14 - 02/16): 
-  - M: Binding and Substitution
-  - W: Evaluation Part 2: Function Definitions
-  - Homework 2: Find it in your repo.
-  
-- Week 7 (02/21 - 02/23):   
-  - Midterm week; do your exam.
-  - Midterm Exam: TBA (Due 02/23 by 11:59pm)
-  
-- Week 8 (02/28 - 03/01): Midterm Week
-  - M: Midterm Exam Solitions and Discussion    
-  - W: Evaluation Part 2: Function Definitions
-    - Slides: [pdf](includes/lecture-notes/funct-defs-syntax-trees.pdf)  
-  
-- Week 9 (03/07 - 03/09):
-  - M: Evaluation Part 2: Function Definitions
-    - Slides: [pdf](includes/lecture-notes/funct-defs-eval.pdf)  
-  - W: Functional Programming
-    
-- Week 10 (03/14 - 03/16): 
-  - M: Program Organization
-  - W: Program Organization
-  - Homework 3: TBA
-  
-- Week 11 (03/21 - 03/23): 
-  - M: Mini Swift: Structures and Classes
-  - W: Mini Swift: Structures and Classes
+---
 
-- Week 12 (03/28 - 03/30): 
-  - M: Linearity
-  - W: Linearity
-  - Homework 4: [PDF](includes/hwk/4/hwk4.pdf)
+- Week 1: 1/10 - 1/12
+  - T: Introduction to the course
+  - R: Starting Off: Chapter 1
+
+---
+
+- Week 2: 1/17 - 1/19
+  - T: Names and Functions: Chapter 2
+  - R: Pattern Matching: Chapter 3
+
+---
+
+- Week 3: 1/24 - 1/26
+  - T: Lists: Chapter 4
+  - R: Lists: Chapter 4
+  - Homework 1
+  
+---
+
+- Week 4: 1/23 - 2/2
+  - T: Lists: Chapter 5
+  - R: Functions: Chapter 6
+  
+---
+
+- Week 5: 2/7 - 2/9
+  - T: Functions: Chapter 6
+  - R: Error Handling: Chapter 7
+  - Homework 2
+  
+---
+
+- Week 6: 2/14 - 2/16
+  - T: Pairs: Chapter 8
+  - R: Functions: Chapter 9
+  
+---
+
+- Week 7: 2/21 - 2/23
+  - T: Data Types: Chapter 10
+  - R: Midterm Exam (no class)
+
+---
+
+- Week 8: Midterm: 2/28 - 3/2
+  - T: Data Types: Chapter 10
+  - R: Data Types: Chapter 11
     
-- Week 13 (04/01 - 04/06): 
-  - Spring Break; no classes.
 
-- Week 14 (04/11 - 04/13): 
-  - M: Mini Swift: Adding Linearity
-  - W: Mini Swift: Adding Linearity
-  - Homework 5: TBA
+---
 
-- Week 15 (04/18 - 04/20): 
-  - M: Mini Swift: Semantics
-  - W: Mini Swift: Semantics
+- Week 9: 3/7 - 3/9
+  - T: I/O: Chapter 12
+  - R: Spring Pause (no class)
+  - Homework 3
+
+---
+
+- Week 10: 3/14 - 3/16
+  - T: IO: Chapter 12
+  - R: References & Array: Chapter 13
+
+---
+
+- Week 11: 3/21 - 3/23
+  - T: References & Array: Chapter 13
+  - R: Floats: Chapter 14
+
+---
+
+- Week 12: 3/28 - 3/30
+  - T: Module System
+  - R: Module System
+  - Homework 4
   
-- Week 16 (04/25 - 04/27): 
-  - M: Verification
-  - W: Verification
-  - Homework 6: TBA
+---
+
+- Week 13: 4/4 - 4/6
+  - T: Spring Break (no class)
+  - T: Spring Break (no class)
   
-- Week 17 (05/02 - 05/04): 
-  - M: Final exam released (no class, work on your final)
-  - W: Reading Day (no class)
-  - Final Exam: TBA (Due 05/06 by 11:59pm)
+---
+
+- Week 14: 4/11 - 4/13
+  - T: Objects
+  - R: Objects
+  - Homework 5
+  
+---
+
+- Week 15: 4/18 - 4/20
+  - T: Objects
+  - R: Objects
+
+---
+
+- Week 16: 4/25 - 4/27
+  - T: Resource Analysis
+  - R: Resource Analysis
+  - Homework 6
+
+---
+
+- Week 17: 5/2 - 5/4
+  - T: Linear Types
+  - R: Reading Day (no class)
+  
+---
+
+- Final Exam: Take Home Exam
+  - 5/4: Final Exam Released
+  - 5/9: Final Exam Due
+
