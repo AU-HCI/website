@@ -9,7 +9,7 @@ date: Spring 2022
 
 - *Instructor:* Harley Eades III ([email me](mailto:harley.eades@gmail.com)) ([DM me](https://plauworkspace.slack.com/archives/D01HLMR6ZDK))
 - Office: UH 108
-- Course webpage: <http://metatheorem.org/plweb>
+- Course webpage: <https://hde.design/plweb>
 
 ## Description
 
@@ -17,6 +17,7 @@ In this course we will be discussing the theoretical design and the
 practical implementation of programming languages, and a features from
 a wide range of programming languages in a simplified setting.
 
+- [Book](/plweb/includes/lecture_notes/book.pdf)
 - [Course Calendar](https://www.google.com/calendar/embed?src=3ekrviscan57vh4raoblif5gbg%40group.calendar.google.com&ctz=America/New_York )
 
 ## Prerequisites
@@ -65,7 +66,7 @@ found in the [Course Schedule](/plweb/lectures.html ).
 
 ## Graded Work
 
-- (60\%) 6 graded homework assignments.
+- (60\%) 5 graded homework assignments.
 
 - (20\%) A take-home midterm exam.
 
@@ -85,8 +86,8 @@ following scoring tables:
 All homework is to be turned in via your private Git repository.
 There are two deadlines for this course:
 
-- Soft: By 11:59pm on the Wednesday after the homework is released.
-- Hard: By 11:59pm on the Friday nine days after the homework is released.
+- Soft: By 11:59pm on the Thursday after the homework is released.
+- Hard: By 11:59pm on the Friday eight days after the homework is released.
 
 The precise dates will be on each homework assignment.
 
