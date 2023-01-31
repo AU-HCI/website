@@ -9,26 +9,36 @@ toc: false
 
 - Week 1: 1/10 - 1/12
   - T: Introduction to the course
-  - R: Starting Off: Chapter 1
+  - R: Class was canceled.
 
 ---
 
 - Week 2: 1/17 - 1/19
-  - T: Names and Functions: Chapter 2
-  - R: Pattern Matching: Chapter 3
-
+  - T: [It Begins!](https://youtu.be/vs1iQWPDWJ0)
+    - Topics: Basic design of PLs.
+    - Read: Chapter 1
+  - R: [Names, Functions, Types](https://youtu.be/3Dc-RZU_keQ) 
+    - Read: Chapter 2
+    - Topics: Syntax design of PLs, basic functions and types in OCaml.
+    
 ---
 
 - Week 3: 1/24 - 1/26
-  - T: Lists: Chapter 4
-  - R: Lists: Chapter 4
+  - T: [Recursive Functions and their Evaluation](https://youtu.be/BgpwGi_NsPo)
+    - Topics: Evaluation of recursive functions using activation records.
+    - Read: Chapter 2
+  - R: [Performance and Optimization of Recursive Functions](https://youtu.be/pPyWuVuyOO8)
+    - Topics: tail call optimization, which PLs support it, and which don't.
+    - Read: Chapter 2
   - Homework 1
   
 ---
 
 - Week 4: 1/23 - 2/2
-  - T: Lists: Chapter 5
-  - R: Functions: Chapter 6
+  - T: [Algebraic Datatypes: A PL Modern Marvel](https://youtu.be/__00uF4tjHI)
+    - Topics: ADTs, pattern matching
+    - Read: Chapter 10
+  - R: TBA
   
 ---
 

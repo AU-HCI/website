@@ -1,6 +1,6 @@
 ---
 title: Syllabus
-syllabus_subtitle: Programming Languages (CSCI:3300/CSCI:5300)
+syllabus_subtitle: Programming Languages Concepts (CSCI:3300/CSCI:5300)
 author: Harley Eades
 date: Spring 2022
 ---
@@ -17,7 +17,8 @@ In this course we will be discussing the theoretical design and the
 practical implementation of programming languages, and a features from
 a wide range of programming languages in a simplified setting.
 
-- [Book](/ plweb/includes/lecture-notes/book.pdf)
+- [Learn OCaml](https://learn-ocaml.hde.design:8443)
+- [Book](/plweb/includes/lecture-notes/book.pdf)
 - [Course Calendar](https://www.google.com/calendar/embed?src=3ekrviscan57vh4raoblif5gbg%40group.calendar.google.com&ctz=America/New_York )
 
 ## Prerequisites
@@ -319,5 +320,4 @@ initiating or contributing to academically dishonest behavior.
 
 The Reese Library’s Cyber Resource Center:
 <http://guides.augusta.edu/friendly.php?s=cyber>.
-
 
