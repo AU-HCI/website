@@ -17,8 +17,10 @@ In this course we will be discussing the theoretical design and the
 practical implementation of programming languages, and a features from
 a wide range of programming languages in a simplified setting.
 
-- [Learn OCaml](https://learn-ocaml.hde.design:8443)
-- [Book](/plweb/includes/lecture-notes/book.pdf)
+- [Course Schedule](/plweb/lectures.html )
+- [Learn OCaml Platform](https://learn-ocaml.hde.design:8443)
+- [OCaml Book](/plweb/includes/lecture-notes/book.pdf)
+- [PL Foundations Book](https://www.cs.cmu.edu/~rwh/pfpl/2nded.pdf)
 - [Course Calendar](https://www.google.com/calendar/embed?src=3ekrviscan57vh4raoblif5gbg%40group.calendar.google.com&ctz=America/New_York )
 
 ## Prerequisites
@@ -32,38 +34,22 @@ Office hours will be held virtually by appointment.  Please schedule using Slack
 
 ## Course Goals
 
-The goals of this course consist of global goals and specialized
-goals.  The former is a set of goals that I believe will benefit the
-student in a wider area of life than this course, while the
-specialized goals are the goals of understanding programming language
-theory.
+This course introduces many concepts underlying the design,
+definition, implementation and use of modern programming languages. We
+study:
 
-### Global Goals
+- various programming language paradigms including:
+functional, imperative, concurrent, and object-oriented
+programming; 
 
-The global goals seek to help the student with broad knowledge that
-will help them throughout life.  For example, in other courses and in
-their future -- or current -- jobs.  It could be argued that all of
-this course fits this perspective, but not every student will become
-programming language researchers or implementors.  
+- the implementation of a small programming language with many
+  features which supports various programming paradigms;
+  
+- students are also introduced to knew ways of thinking by learning a
+  new programming language which uses a paradigm they may not have
+  programmed in before.  We will use this programming language to
+  complete the assignments in this course.
 
-The global goals can be summarized as goals that aim to train the
-student in critical thinking, and mathematical and logical reasoning.
-Specifically, we will attempt to understand the following concepts:
-
-- Mathematical proof, especially, proof by induction,
-- Logic,
-- Recursive thinking,
-- Reading advanced computer science material,
-- Basics of formalized mathematics and verification, and
-- the basics of programming language design and implementation.
-
-The global goals are the main goals I really want everyone to take
-away from the class.
-
-### Specialized Goals
-
-Specialized goals amount to the content of the course.  This can be
-found in the [Course Schedule](/plweb/lectures.html ).    
 
 ## Graded Work
 
