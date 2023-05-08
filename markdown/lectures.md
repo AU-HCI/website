@@ -38,80 +38,79 @@ toc: false
   - T: [Algebraic Datatypes: A PL Modern Marvel](https://youtu.be/__00uF4tjHI)
     - Topics: ADTs, pattern matching
     - Read: Chapter 10
-  - R: Class was canceled.
+  - R: [Functional Programming: A Brief Introduction](https://youtu.be/r1sEN-Mi5Yc)
+    - Topics: lambda-abstractions, higher-order functions, combinators
   
 ---
 
 - Week 5: 2/7 - 2/9
   - T: [Functional Programming: A Brief Introduction](https://youtu.be/r1sEN-Mi5Yc)
     - Topics: lambda-abstractions, higher-order functions, combinators
-  - R: [Functional Programming: A Brief Introduction](https://youtu.be/r1sEN-Mi5Yc)
-    - Topics: lambda-abstractions, higher-order functions, combinators
-  - Homework 2
+  - R: [Concrete Syntax: The UI for PLs](https://youtu.be/lsGGa0XTzKc)
+    - Topics: concrete syntax, abstract syntax, parsing, context-free grammars, ambiguity, parse trees
   
 ---
 
 - Week 6: 2/14 - 2/16
-  - T: [Concrete Syntax: The UI for PLs](https://youtu.be/lsGGa0XTzKc)
-    - Topics: concrete syntax, abstract syntax, parsing, context-free grammars, ambiguity, parse trees
-  - R: Inductive Definitions
-    - Topics: The tool we use to specify algorithms used by a PL.
+  - T: [Inductive Definitions: Inference Rules, Deductions, Logic Programming](https://youtu.be/FPJlV0jNFmQ)
+    - Topics: The tool we use to specify algorithms used by a PL, and we also introduce Logic Programming.
+  - R: [Abstract Syntax](https://youtu.be/tdmBzqixuNk)
+    - Topics: Internal representation of a PL by a compiler.    
   
 ---
 
 - Week 7: 2/21 - 2/23
-  - T: Abstract Syntax: Reasoning About and Implementing PLs
-    - Topics: Internal representation of a PL by a compiler.
-  - R: Rule Induction
-    - Topics: Proving properties about PLs.
-
----
-
-- Week 8: Midterm: 2/28 - 3/2
-  - T: Static and Dynamic Semantics: Analysis and Evaluation of Programs
+  - T: [Static and Dynamic Semantics: Analysis and Evaluation of Programs](https://youtu.be/u9pHbxNvzrQ)
     - Topics: Type checking and running programs.
   - R: Introducing a small PL: miniOCaml
     - Topics: miniOCaml is a small PL we will define and implement together.
+  - Homework 2: [PDF](includes/hwk/2/hwk2.pdf)
     
 ---
 
+- Week 8: Midterm: 2/28 - 3/2
+  - T: Midterm Exam.
+  - R: Midterm Exam.
+  - Midterm: [PDF](includes/hwk/midterm.pdf)
+  
+---
+
 - Week 9: 3/7 - 3/9
-  - T: Type Safety: Well Typed Programs Don't Go Wrong!
-    - Topics: A very important property of a PL.
-  - R: Spring Pause (no class)
-  - Homework 3
+  - T: Introducing a small PL: miniOCaml
+    - Topics: miniOCaml is a small PL we will define and implement together.
+  - R: Spring Pause (no class)  
 
 ---
 
 - Week 10: 3/14 - 3/16
-  - T: Progress: Characterizing the values of a PL
-    - Topics: An important property regarding evaluation of programs.
-  - R: Abstract Data Types
-    - Topics: We will add ADTs to miniOCaml and discuss common mistakes in the design of PLs.
-
+  - T: Type Safety: Well Typed Programs Don't Go Wrong!
+    - Topics: A very important property of a PL.
+  - R: Abstract Machines
+    - Topics: Specifying and implementing the evaluation programs.  We will define an abstract machine for miniOCaml.
+    
+  
 ---
 
 - Week 11: 3/21 - 3/23
-  - T: Abstract Machines
-    - Topics: Specifying and implementing the evaluation programs.  We will define an abstract machine for miniOCaml.
-  - R: Adding new structure to a PL.
+  - T: Adding new structure to a PL.
     - Topics: We will discuss how adding new structures to a PL is
       done and how it ripples through the design.  As an example we
       will add some new types to miniOCaml.
-
+  - R: Progress: Characterizing the values of a PL
+    - Topics: An important property regarding evaluation of programs.
+    
 ---
 
 - Week 12: 3/28 - 3/30
   - T: Parametric Polymorphism (Generics)
     - Topics: The definition of polymorphism or commonly called
       generics will be discussed. We will add polymorphism to
-      miniOCaml as an example.
+      miniOCaml as an example. 
   - R: Data Abstraction: The first step to object orientation.
     - Topics: The use of existential types to hide data in a type safe
       way is discussed.  We will add existential types to miniOCaml as
       an example.
-  - Homework 4
-  
+    
 ---
 
 - Week 13: 4/4 - 4/6
@@ -124,7 +123,7 @@ toc: false
   - T: Organizing Programs using Records: The second step to object orientation.
     - Topics: We move a bit closer to OOP by introducing records.  A
       simple way to organize the structure of programs and data.  We
-      will add records to miniOCaml as an example.
+      will add records to miniOCaml as an example.       
   - R: Mutable Storage: State is the third step to object orientation.
     - Topics: Two types of mutable storage designs are discussed: the
       imperative style where types do not track effects, but the
@@ -133,15 +132,15 @@ toc: false
       pure.  We add imperative style effects to miniOCaml as an
       example, and show that the other style can also be used in
       miniOCaml.
-  - Homework 5
-  
+  - Homework 3: [PDF](includes/hwk/3/hwk.pdf ) 
+
 ---
 
 - Week 15: 4/18 - 4/20
   - T: Object Orientation: Part I
     - Topics: We show that the combination of data abstract, records,
       and mutable storage results in the ability to define classes and
-      objects.
+      objects.            
   - R: Object Orientation: Part II
     - Topics: We add subtyping to the mix to gain a surprising amount
       of power and expressivity for object-oriented programming.  We
@@ -153,12 +152,12 @@ toc: false
   - T: Storage Management and Garbage Collection
     - Topics: We discuss two important parts of many modern
       programming languages: storage management and garbage
-      collection.
+collection.
+
   - R: Evaluation Orders and Futures
     - Topics: We discuss the various evaluation orders, introduce
       call-by-need, and then futures.  We show how we would modify
-      miniOCaml to support call-by-need.
-  - Homework 6
+miniOCaml to support call-by-need.
 
 ---
 
@@ -167,7 +166,7 @@ toc: false
     - Topics: We talk about how advances in type systems can be used
       to catch some of the most common programmer mistakes. These have
       lead to new languages like Rust, Swift, and new additions to
-      Java Script. We add resource typing to miniOCaml as an example.
+      Java Script. We add resource typing to miniOCaml as an example. 
   - R: Reading Day (no class)
   
 ---
@@ -175,4 +174,5 @@ toc: false
 - Final Exam: Take Home Exam
   - 5/4: Final Exam Released
   - 5/9: Final Exam Due
+  - Final: [PDF](includes/hwk/final.pdf)
 

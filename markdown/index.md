@@ -2,7 +2,7 @@
 title: Syllabus
 syllabus_subtitle: Programming Languages Concepts (CSCI:3300/CSCI:5300)
 author: Harley Eades
-date: Spring 2022
+date: Spring 2024
 ---
 
 ## Staff
@@ -11,17 +11,48 @@ date: Spring 2022
 - Office: UH 108
 - Course webpage: <https://hde.design/plweb>
 
-## Description
-
-In this course we will be discussing the theoretical design and the
-practical implementation of programming languages, and a features from
-a wide range of programming languages in a simplified setting.
+## Helpful Links
 
 - [Course Schedule](/plweb/lectures.html )
 - [Learn OCaml Platform](https://learn-ocaml.hde.design:8443)
 - [OCaml Book](/plweb/includes/lecture-notes/book.pdf)
 - [PL Foundations Book](https://www.cs.cmu.edu/~rwh/pfpl/2nded.pdf)
 - [Course Calendar](https://www.google.com/calendar/embed?src=3ekrviscan57vh4raoblif5gbg%40group.calendar.google.com&ctz=America/New_York )
+
+## Description
+
+In this course we will be discussing the theoretical design and the
+practical implementation of programming languages, and a features from
+a wide range of programming languages in a simplified setting.
+
+Topics include:
+
+- Functional Programming Primer
+  - Names, Functions, Types
+  - Recursive Functions and their Evaluation
+  - Performance and Optimization of Recursive Functions
+  - Algebraic Datatypes
+- PL Design and Implementation 
+  - Concrete Syntax
+  - Inductive Definitions
+    - Inference Rules
+    - Deductions
+    - Logic Programming
+  - Abstract Syntax
+  - Static and Dynamic Semantics
+  - Implementing a small PL
+  - Type Safety 
+  - Abstract Machines
+  - Progress
+  - Parametric Polymorphism
+  - Data Abstraction
+  - Records
+  - Mutable Storage
+  - Object Orientation
+  - Garbage Collection
+  - Futures
+  - Resource Typing and Analysis
+
 
 ## Prerequisites
 
