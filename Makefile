@@ -2,12 +2,12 @@ defaults := defaults/site
 latex_defaults := defaults/syllabus
 md_dir := markdown
 md_sources := $(wildcard $(md_dir)/*.md)
-html_dir := plweb
+html_dir := hciweb
 html_targets := $(subst $(md_dir), $(html_dir),$(subst .md,.html,$(md_sources)))
 html_layout := layouts/site.html
 latex_layout := layouts/syllabus.latex
 
-sitepath=/Users/heades/website/heades.github.io/plweb
+sitepath=/Users/heades/website/heades.github.io/$(html_dir)
 notespath := lecture-notes
 
 all : $(html_targets) $(html_dir)/includes/syllabus.pdf
@@ -26,9 +26,8 @@ watch :
 
 push: all
 	cp -vR $(html_dir)/* $(sitepath)
-	cd $(notespath) && make
 	cd $(sitepath) && git add . && git commit -a -m 'Updating PL Website.' && git push	
 
 clean :
-	rm -f plweb/*.html
+	rm -f hciweb/*.html
 	rm -rf $(sitepath)/*

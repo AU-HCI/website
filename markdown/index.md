@@ -1,62 +1,53 @@
 ---
 title: Syllabus
-syllabus_subtitle: Programming Languages Concepts (CSCI:3300/CSCI:5300)
+syllabus_subtitle: Human Computer Interaction
 author: Harley Eades
 date: Spring 2024
 ---
 
 ## Staff
 
-- *Instructor:* Harley Eades III ([email me](mailto:harley.eades@gmail.com)) ([DM me](https://plauworkspace.slack.com/archives/D01HLMR6ZDK))
+- *Instructor:* Harley Eades III ([email me](mailto:heades@augusta.edu)) ([DM me](SLACK LINK))
 - Office: UH 108
-- Course webpage: <https://hde.design/plweb>
+- Course webpage: <https://hde.design/hciweb>
 
 ## Helpful Links
 
-- [Course Schedule](/plweb/lectures.html )
-- [Learn OCaml Platform](https://learn-ocaml.hde.design:8443)
-- [OCaml Book](/plweb/includes/lecture-notes/book.pdf)
-- [PL Foundations Book](https://www.cs.cmu.edu/~rwh/pfpl/2nded.pdf)
-- [Course Calendar](https://www.google.com/calendar/embed?src=3ekrviscan57vh4raoblif5gbg%40group.calendar.google.com&ctz=America/New_York )
+- [Course Schedule](/hciweb/lectures.html )
 
 ## Description
 
-In this course we will be discussing the theoretical design and the
-practical implementation of programming languages, and a features from
-a wide range of programming languages in a simplified setting.
+Human Computer Interaction (HCI) is the study of how people interact
+with computing devices.  The main goals of HCI are to study how to
+create digit projects that are:
+
+- Useable: Effectiveness, Efficiency, Safety, Utility,
+  Learnability, Memorability
+
+and have a well designed:
+
+- User Experience: Satisfying, Enjoyable, Fun, Entertaining, Helpful
+
+This course will introduce you to the theory of HCI and, through
+various projects, show how to take that theory and use it in practice.
 
 Topics include:
 
-- Functional Programming Primer
-  - Names, Functions, Types
-  - Recursive Functions and their Evaluation
-  - Performance and Optimization of Recursive Functions
-  - Algebraic Datatypes
-- PL Design and Implementation 
-  - Concrete Syntax
-  - Inductive Definitions
-    - Inference Rules
-    - Deductions
-    - Logic Programming
-  - Abstract Syntax
-  - Static and Dynamic Semantics
-  - Implementing a small PL
-  - Type Safety 
-  - Abstract Machines
-  - Progress
-  - Parametric Polymorphism
-  - Data Abstraction
-  - Records
-  - Mutable Storage
-  - Object Orientation
-  - Garbage Collection
-  - Futures
-  - Resource Typing and Analysis
-
+- History of HCI
+- Usabilty
+- Interaction Design
+- User Centered Design
+- Models
+- Prototyping
+- Sketching/Brainstorming
+- Designing for the web
+- Designing for mobile
+- Typescript/Javascript
+- React
+- React Native
 
 ## Prerequisites
 
-- (CSCI:3030) Mathematical Structures in CS
 - (CSCI:3400) Data Structures
 
 ## Office Hours
@@ -65,30 +56,13 @@ Office hours will be held virtually by appointment.  Please schedule using Slack
 
 ## Course Goals
 
-This course introduces many concepts underlying the design,
-definition, implementation and use of modern programming languages. We
-study:
-
-- various programming language paradigms including:
-functional, imperative, concurrent, and object-oriented
-programming; 
-
-- the implementation of a small programming language with many
-  features which supports various programming paradigms;
-  
-- students are also introduced to knew ways of thinking by learning a
-  new programming language which uses a paradigm they may not have
-  programmed in before.  We will use this programming language to
-  complete the assignments in this course.
-
+TODO
 
 ## Graded Work
 
-- (60\%) 5 graded homework assignments.
-
-- (20\%) A take-home midterm exam.
-
-- (20\%) A take-home final exam.
+- Homework (50%): 4 mini-projects
+- Midterm (25%): Project
+- Final (25%): Project
 
 No scores will be curved throughout the semester.  Please use the
 following scoring tables:
@@ -101,13 +75,13 @@ following scoring tables:
 
 ## Turning in Homework
 
-All homework is to be turned in via your private Git repository.
+All homework and project are to be turned in via your private Git repository.
 There are two deadlines for this course:
 
-- Soft: By 11:59pm on the Thursday after the homework is released.
-- Hard: By 11:59pm on the Friday eight days after the homework is released.
+- Deadline: By 11:59pm on the Thursday after the assignment is released.
+- Hard Deadline: By 11:59pm on the Friday eight days after the assignment is released.
 
-The precise dates will be on each homework assignment.
+The precise dates will be on each assignment.
 
 ## Course Communication
 
@@ -119,9 +93,10 @@ Slack Rules:
 
 - No inapprorpiate messages will be tolerated.
 - You must add your fullname (First and Last) to your profile.
-- All course annoucements will be shared in [\#annoucements](https://plauworkspace.slack.com/archives/C01H91REG3H).
-- Course discussion will take place in the channel [\#office_hours](https://plauworkspace.slack.com/archives/C01HPQAKSQJ).
-- For fun I've created [#random](https://plauworkspace.slack.com/archives/C01HQ0YGLBV) for sharing all the gifs and memes.
+- All course annoucements will be shared in [\#annoucements](SLACK LINK).
+- Course discussion will take place in the channel
+  [\#office_hours](SLACK LINK).
+- For fun I've created [#random](SLACK LINK) for sharing all the gifs and memes.
 
 ## Attendance
 
