@@ -7,9 +7,9 @@ toc: false
 
 ---
 
-- Week 1: 1/10 - 1/12
+- Week 1: 1/06 - 1/11
   - T: Introduction to the course
-  - R: 
+  - R: History of HCI
 
 ---
 

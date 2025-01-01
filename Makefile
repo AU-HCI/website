@@ -26,6 +26,7 @@ watch :
 
 push: all
 	cp -vR $(html_dir)/* $(sitepath)
+	git add . && git commit -a -m 'Updating PL Website.' && git push	
 	cd $(sitepath) && git add . && git commit -a -m 'Updating PL Website.' && git push	
 
 clean :

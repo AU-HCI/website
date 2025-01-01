@@ -42,9 +42,15 @@ Topics include:
 - Sketching/Brainstorming
 - Designing for the web
 - Designing for mobile
-- Typescript/Javascript
-- React
-- React Native
+
+# Learning Objectives
+
+- Understand what human-computer interaction and interaction design are 
+- Develop skills on using design methods 
+- Learn how to create design artifacts: scenarios, storyboards, prototypes 
+- Think critically about design solutions 
+- Learn how to do user testing 
+- Communicate effective design critiques and defense
 
 ## Prerequisites
 
@@ -54,18 +60,20 @@ Topics include:
 
 Office hours will be held virtually by appointment.  Please schedule using Slack.
 
-## Course Goals
-
-TODO
-
 ## Graded Work
 
-- Homework (50%): 4 mini-projects
-- Midterm (25%): Project
-- Final (25%): Project
+- Homework (25%): 4
+- Project (75%): 22 Assignments
+  - Milestone 1: Project Proposal
+    - Assignments: 3
+  - Milestone 2: Getting the Right Design
+    - Assignments: 8
+  - Milestone 3: Getting the Design Right
+    - Assignments: 6
+  - Milestone 4: Communicating the Design
+    - Assignments: 5
 
-No scores will be curved throughout the semester.  Please use the
-following scoring tables:
+No scores will be curved throughout the semester.  Please use the following scoring tables:
 
   + A : $88\% - 100\%$
   + B : $78\% - 87\%$
@@ -75,11 +83,12 @@ following scoring tables:
 
 ## Turning in Homework
 
-All homework and project are to be turned in via your private Git repository.
+All homework will be turned in via D2L.
+
 There are two deadlines for this course:
 
-- Deadline: By 11:59pm on the Thursday after the assignment is released.
-- Hard Deadline: By 11:59pm on the Friday eight days after the assignment is released.
+- Deadline: By 11:59pm on the Wednesday the week after the assignment is released.
+- Hard Deadline: By 11:59pm on the Friday the week after the assignment is released.
 
 The precise dates will be on each assignment.
 
