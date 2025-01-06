@@ -8,13 +8,8 @@ toc: false
 ---
 
 - Week 1: 1/06 - 1/11
-  - T: Introduction to the course
-  - R: History of HCI
+  - M: Introduction to the course
+    - Slides: [PDF]()
+  - W: History of HCI
 
 ---
-
-- Final Project
-  - ?: Final Project Released
-  - ?: Final Project Due
-  - Specification: [PDF](includes/hwk/final-project.pdf)
-

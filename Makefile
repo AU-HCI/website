@@ -6,11 +6,14 @@ html_dir := hciweb
 html_targets := $(subst $(md_dir), $(html_dir),$(subst .md,.html,$(md_sources)))
 html_layout := layouts/site.html
 latex_layout := layouts/syllabus.latex
+lectures_dir := lectures
+lectures_target := $(html_dir)/includes/$(lectures_dir)
 
 sitepath=/Users/heades/website/heades.github.io/$(html_dir)
 notespath := lecture-notes
 
-all : $(html_targets) $(html_dir)/includes/syllabus.pdf
+all : $(html_targets) $(html_dir)/includes/syllabus.pdf $(lecture_pdfs)
+	rsync -a $(lectures_dir)/ $(lectures_target)
 
 $(html_dir)/%.html : $(md_dir)/%.md Makefile $(html_layout) $(defaults).yaml
 	pandoc -s -d $(defaults) -o $@ $<

@@ -34,7 +34,7 @@ various projects, show how to take that theory and use it in practice.
 Topics include:
 
 - History of HCI
-- Usabilty
+- Usability
 - Interaction Design
 - User Centered Design
 - Models
@@ -52,13 +52,9 @@ Topics include:
 - Learn how to do user testing 
 - Communicate effective design critiques and defense
 
-## Prerequisites
-
-- (CSCI:3400) Data Structures
-
 ## Office Hours
 
-Office hours will be held virtually by appointment.  Please schedule using Slack.
+Office hours will be held by appointment.  Please schedule using Slack.
 
 ## Graded Work
 
@@ -83,26 +79,19 @@ No scores will be curved throughout the semester.  Please use the following scor
 
 ## Turning in Homework
 
-All homework will be turned in via D2L.
-
-There are two deadlines for this course:
-
-- Deadline: By 11:59pm on the Wednesday the week after the assignment is released.
-- Hard Deadline: By 11:59pm on the Friday the week after the assignment is released.
-
-The precise dates will be on each assignment.
+All homework will be turned in via git and Github.
 
 ## Course Communication
 
 This course has a slack channel.  Please join via the email sent out to you.
 
-All course discussion and annoucements will take place on Slack.  The only time Slack should not be used is when discussing grades.  I will not respond to questions via email unless they are grade specific.
+All course discussion and announcements will take place on Slack.  The only time Slack should not be used is when discussing grades.  I will not respond to questions via email unless they are grade specific.
 
 Slack Rules:
 
-- No inapprorpiate messages will be tolerated.
+- No inappropriate messages will be tolerated.
 - You must add your fullname (First and Last) to your profile.
-- All course annoucements will be shared in [\#annoucements](SLACK LINK).
+- All course announcements will be shared in [\#announcements](SLACK LINK).
 - Course discussion will take place in the channel
   [\#office_hours](SLACK LINK).
 - For fun I've created [#random](SLACK LINK) for sharing all the gifs and memes.
@@ -113,7 +102,7 @@ Attendance is optional, but highly encouraged.
 
 ## Getting Help
 
-Professors like students have many duites and commitments, and so to
+Professors like students have many duties and commitments, and so to
 be better prepared to help the students outside of class I have the
 following office rules that must be adhered to:
 
