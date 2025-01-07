@@ -133,7 +133,7 @@ toc: false
 
 ---
 
-- Week 16: 5/05 - 5/09
+- Week 17: 5/05 - 5/09
   - Workshop: 5/08 from 2-4
 
 ---
