@@ -1,4 +1,4 @@
-data-dir: /Users/heades/teaching/CSCI-3300/website
+data-dir: /Users/heades/teaching/HCI/website
 
 from: markdown+emoji
 
@@ -15,18 +15,18 @@ standalone: true
 self-contained: false
 
 table-of-contents: true
-toc-depth: 2
+toc-depth: 3
 number-sections: false
 
 highlight-style: pygments
 
 email-obfuscation: javascript
 metadata:
-  email: harley.eades@gmail.com
+  email: heades@augusta.edu
 
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
 css:
-- "/plweb/includes/css/default.css"
+- "/hciweb/includes/css/default.css"
