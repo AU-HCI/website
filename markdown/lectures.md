@@ -11,7 +11,7 @@ toc: false
   - M: Introduction to the course
     - Slides: [PDF](includes/lectures/0-introduction.pdf)
   - W: History of HCI
-    - Slides: TBA
+    - Slides: [PDF](includes/lectures/1-history.pdf)
 
 ---
 
@@ -20,6 +20,7 @@ toc: false
     - Slides: TBA
   - W: Design Process and Design Diamond
     - Slides: TBA
+  - Assignment 1: [Due 1/20](mini-project.html#project-proposal)
 
 ---
 

@@ -58,18 +58,16 @@ Office hours will be held by appointment.  Please schedule using Slack.
 
 ## Graded Work
 
-- Homework (25%): 4
-- Project (75%): 22 Assignments
+- Homework (5%): 4
+- Individual Project (90%): 
   - Milestone 1: Project Proposal
     - Assignments: 3
   - Milestone 2: Getting the Right Design
-    - Assignments: 8
   - Milestone 3: Getting the Design Right
-    - Assignments: 6
   - Milestone 4: Communicating the Design
-    - Assignments: 5
 
-No scores will be curved throughout the semester.  Please use the following scoring tables:
+No scores will be curved throughout the semester.  Please use the following
+scoring table:
 
   + A : $88\% - 100\%$
   + B : $78\% - 87\%$
