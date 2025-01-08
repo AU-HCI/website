@@ -27,9 +27,9 @@ toc: false
 - Week 3: 1/20 - 1/24
   - M: No Class (MLK Day)
   - W: Lab Day
-    - Be prepared to discuss your assignment 1.
+    - Be prepared to discuss your three problems from Assignment 1.B.
   - Assignment 1.C: [Due 1/27](mini-project.html#project-proposal)
-  
+
 ---
 
 - Week 4: 1/27 - 1/31
