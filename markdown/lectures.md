@@ -27,7 +27,7 @@ toc: false
 - Week 3: 1/20 - 1/24
   - M: No Class (MLK Day)
   - W: Lab Day
-    - Be prepared to discuss your three problems from Assignment 1.B.
+    - Be prepared to discuss your three problems from [Assignment 1.B](mini-project.html#assignment-1.b-problem-proposal)
   - Assignment 1.C: [Due 1/27](mini-project.html#project-proposal)
 
 ---
@@ -36,7 +36,9 @@ toc: false
   - M: User Research
     - Slides: TBA
   - W: Lab Day
-    
+    - We will be completing Assignment 2.A.
+    - Assignment 2.A: [Due After Class](mini-project.html#assignment-2.a-planning-design-research)
+    - Assignment 2.B: [Due 2/06](mini-project.html#assignment-2.b-initial-plan-for-design-research)
 
 ---
 
@@ -44,7 +46,9 @@ toc: false
   - M: Human Performance
     - Slides: TBA
   - W: Lab Day
-    - Slides: TBA
+    - Be prepared to discuss [Assignment 2.B](mini-project.html#assignment-2.b-initial-plan-for-design-research) 
+    - After class you can make revisions if necessary.
+    - Assignment 2.C: [Due 2/12](mini-project.html#assignment-2.c-starting-your-design-research)
 
 ---
 
@@ -53,7 +57,7 @@ toc: false
     - Slides: TBA
 
   - W: Lab Day
-    - Slides: TBA
+    - Be prepared to discuss [Assignment 2.C](mini-project.html#assignment-2.c-starting-your-design-research)
 
 ---
 
@@ -61,7 +65,6 @@ toc: false
   - M: Story Boarding
     - Slides: TBA
   - W: Lab Day
-    - Slides: TBA
 
 ---
 
@@ -69,7 +72,6 @@ toc: false
   - M: Paper Prototyping
     - Slides: TBA
   - W: Lab Day
-    - Slides: TBA
 
 ---
 
@@ -77,7 +79,6 @@ toc: false
   - M: Testing
     - Slides: TBA
   - W: Lab Day
-    - Slides: TBA
 
 ---
 
@@ -85,7 +86,6 @@ toc: false
   - M: Accessibility
     - Slides: TBA
   - W: Lab Day
-    - Slides: TBA
 
 ---
 
@@ -93,7 +93,6 @@ toc: false
   - M: Patterns
     - Slides: TBA
   - W: Lab Day
-    - Slides: TBA
 
 ---
 
@@ -101,7 +100,6 @@ toc: false
   - M: TBA
     - Slides: TBA
   - W: Lab Day
-    - Slides: TBA
 
 ---
 
@@ -109,7 +107,6 @@ toc: false
   - M: TBA
     - Slides: TBA 
   - W: Lab Day
-    - Slides: TBA
 
 ---
 
@@ -123,7 +120,6 @@ toc: false
   - M: TBA
     - Slides: TBA
   - W: Lab Day
-    - Slides: TBA
 
 ---
 
@@ -131,7 +127,6 @@ toc: false
   - M: TBA
     - Slides: TBA
   - W: Lab Day
-    - Slides: TBA
 
 ---
 
