@@ -20,22 +20,23 @@ toc: false
     - Slides: TBA
   - W: Design Process and Design Diamond
     - Slides: TBA
-  - Assignment 1: [Due 1/20](mini-project.html#project-proposal)
+  - Assignment 1.A & 1.B: [Due 1/20](mini-project.html#project-proposal)
 
 ---
 
 - Week 3: 1/20 - 1/24
   - M: No Class (MLK Day)
-  - W: User Research
-    - Slides: TBA
-
+  - W: Lab Day
+    - Be prepared to discuss your assignment 1.
+  - Assignment 1.C: [Due 1/27](mini-project.html#project-proposal)
+  
 ---
 
 - Week 4: 1/27 - 1/31
   - M: User Research
     - Slides: TBA
   - W: Lab Day
-    - Slides: TBA
+    
 
 ---
 
