@@ -16,7 +16,7 @@ toc: false
 ---
 
 - Week 2: 1/13 - 1/17
-  - M: Designing For Diversity
+  - M: The Design of Everyday Things
     - Slides: TBA
   - W: Design Process and Design Diamond
     - Slides: TBA
@@ -27,6 +27,7 @@ toc: false
 - Week 3: 1/20 - 1/24
   - M: No Class (MLK Day)
   - W: Lab Day
+    - Designing For Diversity: TBA
     - Be prepared to discuss your three problems from [Assignment 1.B](mini-project.html#assignment-1.b-problem-proposal)
   - Assignment 1.C: [Due 1/27](mini-project.html#project-proposal)
 
@@ -55,7 +56,6 @@ toc: false
 - Week 6: 2/10 - 2/14
   - M: Task Analysis
     - Slides: TBA
-
   - W: Lab Day
     - Be prepared to discuss [Assignment 2.C](mini-project.html#assignment-2.c-starting-your-design-research)
 
