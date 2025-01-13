@@ -18,7 +18,8 @@ toc: false
 - Week 2: 1/13 - 1/17
   - M: The Design of Everyday Things
     - Slides: TBA
-  - W: Design Process and Design Diamond
+    - Reading Assignment: [A THREE-STATE MODEL OF GRAPHICAL INPUT](https://www.dgp.toronto.edu/OTP/papers/bill.buxton/3state.html)
+  - W: Lab Day
     - Slides: TBA
   - Assignment 1.A & 1.B: [Due 1/20](mini-project.html#project-proposal)
 
@@ -34,7 +35,7 @@ toc: false
 ---
 
 - Week 4: 1/27 - 1/31
-  - M: User Research
+  - M: Design Process and Design Diamond
     - Slides: TBA
   - W: Lab Day
     - We will be completing Assignment 2.A.
@@ -44,7 +45,7 @@ toc: false
 ---
 
 - Week 5: 2/03 - 2/07
-  - M: Human Performance
+  - M: User Research
     - Slides: TBA
   - W: Lab Day
     - Be prepared to discuss [Assignment 2.B](mini-project.html#assignment-2.b-initial-plan-for-design-research) 
@@ -54,7 +55,7 @@ toc: false
 ---
 
 - Week 6: 2/10 - 2/14
-  - M: Task Analysis
+  - M: Human Performance
     - Slides: TBA
   - W: Lab Day
     - Be prepared to discuss [Assignment 2.C](mini-project.html#assignment-2.c-starting-your-design-research)
@@ -62,42 +63,42 @@ toc: false
 ---
 
 - Week 7: 2/17 - 2/21
-  - M: Story Boarding
+  - M: Task Analysis
     - Slides: TBA
   - W: Lab Day
 
 ---
 
 - Week 8: 2/24 - 2/28
-  - M: Paper Prototyping
+  - M: Story Boarding
     - Slides: TBA
   - W: Lab Day
 
 ---
 
 - Week 9: 3/03 - 3/07
-  - M: Testing
+  - M: Paper Prototyping
     - Slides: TBA
   - W: Lab Day
 
 ---
 
 - Week 10: 3/10 - 3/14
-  - M: Accessibility
+  - M: Testing
     - Slides: TBA
   - W: Lab Day
 
 ---
 
 - Week 11: 3/17 - 3/21
-  - M: Patterns
+  - M: Accessibility
     - Slides: TBA
   - W: Lab Day
 
 ---
 
 - Week 12: 3/24 - 3/28
-  - M: TBA
+  - M: Patterns
     - Slides: TBA
   - W: Lab Day
 
