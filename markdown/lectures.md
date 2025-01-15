@@ -17,10 +17,10 @@ toc: false
 
 - Week 2: 1/13 - 1/17
   - M: The Design of Everyday Things
-    - Slides: TBA
+    - Slides: [PDF](includes/lectures/2-design-of-everyday-things.pdf)
     - Reading Assignment: [A THREE-STATE MODEL OF GRAPHICAL INPUT](https://www.dgp.toronto.edu/OTP/papers/bill.buxton/3state.html)
   - W: Lab Day
-    - Slides: TBA
+    - Slides: [PDF](includes/lectures/2-design-of-everyday-things.pdf)
   - Assignment 1.A & 1.B: [Due 1/20](mini-project.html#project-proposal)
 
 ---
