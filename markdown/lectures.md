@@ -28,6 +28,7 @@ toc: false
   - M: No Class (MLK Day)
   - W: No Class (Snow Day)    
   - Assignment 1.A & 1.B: [Due 1/29](mini-project.html#project-proposal)
+  
 ---
 
 - Week 4: 1/27 - 1/31
