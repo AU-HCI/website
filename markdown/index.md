@@ -44,7 +44,6 @@ Topics include:
 - Designing for mobile
 
 # Learning Objectives
-
 - Understand what human-computer interaction and interaction design are 
 - Develop skills on using design methods 
 - Learn how to create design artifacts: scenarios, storyboards, prototypes 
