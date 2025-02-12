@@ -54,7 +54,7 @@ toc: false
   - M: The Design of Everyday Things
     - Slides: TBA
   - W: User Research & Lab Day
-    - Slides: [PDF](includes/lectures/3-user-research-methods.pdf)
+    - Slides: [PDF](includes/lectures/4-user-research-methods.pdf)
     - Be prepared to discuss [Assignment 2.B](mini-project.html#assignment-2.b-initial-plan-for-design-research) 
     - After class you can make revisions if necessary.
     - Assignment 2.C: [Due 2/19](mini-project.html#assignment-2.c-starting-your-design-research)    
