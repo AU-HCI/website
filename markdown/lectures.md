@@ -45,8 +45,7 @@ toc: false
     - Slides: TBA
   - W: Lab Day
     - We will be completing Assignment 2.A.    
-  - Assignment 2.A: [Due After Class](mini-project.html#assignment-2.a-planning-design-research)
-  - Assignment 2.B: [Due 2/10](mini-project.html#assignment-2.b-initial-plan-for-design-research)    
+  - Assignment 2.A: [Due After Class](mini-project.html#assignment-2.a-planning-design-research)  
 
 ---
 
@@ -54,59 +53,61 @@ toc: false
   - M: The Design of Everyday Things
     - Slides: TBA
   - W: User Research & Lab Day
-    - Slides: [PDF](includes/lectures/4-user-research-methods.pdf)
-    - Be prepared to discuss [Assignment 2.B](mini-project.html#assignment-2.b-initial-plan-for-design-research) 
-    - After class you can make revisions if necessary.
-    - Assignment 2.C: [Due 2/19](mini-project.html#assignment-2.c-starting-your-design-research)    
+    - Slides: [PDF](includes/lectures/4-user-research-methods.pdf)    
+    - After class you can make revisions if necessary.    
+  - Assignment 2.B: [Due 2/19](mini-project.html#assignment-2.b-initial-plan-for-design-research)    
 
 ---
 
 - Week 7: 2/17 - 2/21
   - M: Design Process and Design Diamond
     - Slides: TBA
+  - W: Human Performance & Lab Day  
+    - Slides: TBA
+  - Be prepared to discuss [Assignment 2.B](mini-project.html#assignment-2.b-initial-plan-for-design-research) 
+  - Assignment 2.C: [Due 2/26](mini-project.html#assignment-2.c-starting-your-design-research)    
+
+---
+
+- Week 8: 2/24 - 2/28
+  - M: Task Analysis
+    - Slides: TBA    
   - W: Lab Day
   - Be prepared to discuss [Assignment 2.C](mini-project.html#assignment-2.c-starting-your-design-research)
 
 ---
 
-- Week 8: 2/24 - 2/28
-  - M: Human Performance
-    - Slides: TBA
-  - W: Lab Day
-
----
-
 - Week 9: 3/03 - 3/07
-  - M: Task Analysis
-    - Slides: TBA
-  - W: Lab Day
-
----
-
-- Week 10: 3/10 - 3/14
   - M: Story Boarding
     - Slides: TBA
   - W: Lab Day
 
 ---
 
-- Week 11: 3/17 - 3/21
+- Week 10: 3/10 - 3/14
   - M: Paper Prototyping
     - Slides: TBA
   - W: Lab Day
 
 ---
 
-- Week 12: 3/24 - 3/28
+- Week 11: 3/17 - 3/21
   - M: Testing
     - Slides: TBA
   - W: Lab Day
 
 ---
 
-- Week 13: 3/31 - 4/04
+- Week 12: 3/24 - 3/28
   - M: Accessibility
     - Slides: TBA 
+  - W: Lab Day
+
+---
+
+- Week 13: 3/31 - 4/04
+  - M: Patterns
+    - Slides: TBA
   - W: Lab Day
 
 ---
@@ -118,7 +119,7 @@ toc: false
 ---
 
 - Week 15: 4/21 - 4/24
-  - M: Patterns
+  - M: TBA
     - Slides: TBA
   - W: Lab Day
 
