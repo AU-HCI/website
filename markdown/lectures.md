@@ -41,7 +41,7 @@ toc: false
 ---
 
 - Week 5: 2/03 - 2/07
-  - M: Designing For Diversity 
+  - M: The Design of Everyday Things
     - Slides: TBA
   - W: Lab Day
     - We will be completing Assignment 2.A.    
@@ -51,9 +51,10 @@ toc: false
 ---
 
 - Week 6: 2/10 - 2/14
-  - M: Design Process and Design Diamond
+  - M: The Design of Everyday Things
     - Slides: TBA
-  - W: Lab Day
+  - W: User Research & Lab Day
+    - Slides: [PDF](includes/lectures/3-user-research-methods.pdf)
     - Be prepared to discuss [Assignment 2.B](mini-project.html#assignment-2.b-initial-plan-for-design-research) 
     - After class you can make revisions if necessary.
     - Assignment 2.C: [Due 2/19](mini-project.html#assignment-2.c-starting-your-design-research)    
@@ -61,7 +62,7 @@ toc: false
 ---
 
 - Week 7: 2/17 - 2/21
-  - M: User Research
+  - M: Design Process and Design Diamond
     - Slides: TBA
   - W: Lab Day
   - Be prepared to discuss [Assignment 2.C](mini-project.html#assignment-2.c-starting-your-design-research)
