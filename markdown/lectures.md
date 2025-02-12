@@ -62,6 +62,7 @@ toc: false
 - Week 7: 2/17 - 2/21
   - M: Design Process and Design Diamond
     - Slides: TBA
+    - Reading on Quantified Self
   - W: Human Performance & Lab Day  
     - Slides: TBA
   - Be prepared to discuss [Assignment 2.B](mini-project.html#assignment-2.b-initial-plan-for-design-research) 
