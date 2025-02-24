@@ -61,8 +61,7 @@ toc: false
 
 - Week 7: 2/17 - 2/21
   - M: No Class
-  - W: Human Performance & Lab Day  
-    - Slides: TBA
+  - W: Lab Day  
   - Be prepared to discuss [Assignment 2.B](mini-project.html#assignment-2.b-initial-plan-for-design-research) 
   - Assignment 2.C: [Due 2/26](mini-project.html#assignment-2.c-starting-your-design-research)    
 
@@ -79,17 +78,17 @@ toc: false
 ---
 
 - Week 9: 3/03 - 3/07
-  - M: Task Analysis
+  - M: Human Performance
     - Slides: TBA    
-  - W: Story Boarding & Lab Day
+  - W: Task Analysis & Lab Day
     - Slides: TBA 
 
 ---
 
 - Week 10: 3/10 - 3/14
-  - M: Paper Prototyping
+  - M: Story Boarding
     - Slides: TBA
-  - W: Lab Day
+  - W: Paper Prototyping & Lab Day
 
 ---
 
