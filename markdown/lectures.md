@@ -60,9 +60,7 @@ toc: false
 ---
 
 - Week 7: 2/17 - 2/21
-  - M: Design Process and Design Diamond
-    - Slides: TBA
-    - Reading on Quantified Self
+  - M: No Class
   - W: Human Performance & Lab Day  
     - Slides: TBA
   - Be prepared to discuss [Assignment 2.B](mini-project.html#assignment-2.b-initial-plan-for-design-research) 
@@ -71,17 +69,20 @@ toc: false
 ---
 
 - Week 8: 2/24 - 2/28
-  - M: Task Analysis
-    - Slides: TBA    
-  - W: Lab Day
+  - M: Design Process and Design Diamond
+    - Slides: [PDF](includes/lectures/3-Design-Process-Sketching.pdf)    
+  - W: Design Process and Design Diamond & Lab Day
+    - Slides: [PDF](includes/lectures/3-Design-Process-Sketching.pdf)    
+    - Reading on Quantified Self
   - Be prepared to discuss [Assignment 2.C](mini-project.html#assignment-2.c-starting-your-design-research)
 
 ---
 
 - Week 9: 3/03 - 3/07
-  - M: Story Boarding
-    - Slides: TBA
-  - W: Lab Day
+  - M: Task Analysis
+    - Slides: TBA    
+  - W: Story Boarding & Lab Day
+    - Slides: TBA 
 
 ---
 
