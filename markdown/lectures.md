@@ -71,43 +71,43 @@ toc: false
   - M: Design Process and Design Diamond
     - Slides: [PDF](includes/lectures/3-Design-Process-Sketching.pdf)    
   - W: Design Process and Design Diamond & Lab Day
-    - Slides: [PDF](includes/lectures/3-Design-Process-Sketching.pdf)    
-    - Reading on Quantified Self
-  - Be prepared to discuss [Assignment 2.C](mini-project.html#assignment-2.c-starting-your-design-research)
+    - Slides: [PDF](includes/lectures/3-Design-Process-Sketching.pdf)        
 
 ---
 
 - Week 9: 3/03 - 3/07
-  - M: Human Performance
-    - Slides: TBA    
-  - W: Task Analysis & Lab Day
+  - M: Design Process and Design Diamond
+    - Slides: [PDF](includes/lectures/3-Design-Process-Sketching.pdf)       
+  - W: Lab Day
     - Slides: TBA 
-
+  - Reading on Quantified Self
+  - Be prepared to discuss [Assignment 2.C](mini-project.html#assignment-2.c-starting-your-design-research)
+  
 ---
 
 - Week 10: 3/10 - 3/14
-  - M: Story Boarding
+  - M: Task Analysis
     - Slides: TBA
   - W: Paper Prototyping & Lab Day
 
 ---
 
 - Week 11: 3/17 - 3/21
-  - M: Testing
+  - M: Human Performance
     - Slides: TBA
   - W: Lab Day
 
 ---
 
 - Week 12: 3/24 - 3/28
-  - M: Accessibility
+  - M: Story Boarding
     - Slides: TBA 
   - W: Lab Day
 
 ---
 
 - Week 13: 3/31 - 4/04
-  - M: Patterns
+  - M: Testing
     - Slides: TBA
   - W: Lab Day
 
@@ -120,14 +120,14 @@ toc: false
 ---
 
 - Week 15: 4/21 - 4/24
-  - M: TBA
+  - M: Accessibility
     - Slides: TBA
   - W: Lab Day
 
 ---
 
 - Week 16: 4/28 - 5/02
-  - M: TBA
+  - M: Patterns
     - Slides: TBA
   - W: Lab Day
 
