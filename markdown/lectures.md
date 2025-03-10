@@ -86,14 +86,14 @@ toc: false
 ---
 
 - Week 10: 3/10 - 3/14
-  - M: Task Analysis
-    - Slides: TBA
-  - W: Paper Prototyping & Lab Day
+  - M: Human Performance
+    - Slides: [PDF](includes/lectures/5-human-performance.pdf)
+  - W: Task Analysis & Lab Day
 
 ---
 
 - Week 11: 3/17 - 3/21
-  - M: Human Performance
+  - M: Paper Prototyping
     - Slides: TBA
   - W: Lab Day
 
