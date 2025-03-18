@@ -94,21 +94,21 @@ toc: false
 
 - Week 11: 3/17 - 3/21
   - M: No Class 
-  - W: [Human Performance]
+  - W: Human Performance
     - Slides: [PDF](includes/lectures/5-human-performance.pdf)
     - Video: [YouTube](https://youtu.be/EZLw4AjXWOs)
 
 ---
 
 - Week 12: 3/24 - 3/28
-  - M: Story Boarding
+  - M: TBA
     - Slides: TBA 
   - W: Lab Day
 
 ---
 
 - Week 13: 3/31 - 4/04
-  - M: Testing
+  - M: TBA
     - Slides: TBA
   - W: Lab Day
 
@@ -121,20 +121,20 @@ toc: false
 ---
 
 - Week 15: 4/21 - 4/24
-  - M: Accessibility
+  - M: TBA
     - Slides: TBA
   - W: Lab Day
 
 ---
 
 - Week 16: 4/28 - 5/02
-  - M: Patterns
+  - M: TBA
     - Slides: TBA
   - W: Lab Day
 
 ---
 
 - Week 17: 5/05 - 5/09
-  - Workshop: 5/08 from 2-4
+  - Final Exam 5/08 from 2-4
 
 ---
