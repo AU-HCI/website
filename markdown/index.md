@@ -2,7 +2,7 @@
 title: Syllabus
 syllabus_subtitle: Human Computer Interaction
 author: Harley Eades
-date: Spring 2024
+date: Spring 2025
 ---
 
 ## Staff
@@ -57,13 +57,8 @@ Office hours will be held by appointment.  Please schedule using Slack.
 
 ## Graded Work
 
-- Homework (5%): 4
-- Individual Project (90%): 
-  - Milestone 1: Project Proposal
-    - Assignments: 3
-  - Milestone 2: Getting the Right Design
-  - Milestone 3: Getting the Design Right
-  - Milestone 4: Communicating the Design
+- Homework (80%): 9
+- Final Exam (20%)
 
 No scores will be curved throughout the semester.  Please use the following
 scoring table:
