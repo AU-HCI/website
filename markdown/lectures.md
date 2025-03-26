@@ -101,15 +101,19 @@ toc: false
 ---
 
 - Week 12: 3/24 - 3/28
-  - M: TBA
-    - Slides: TBA 
-  - W: Lab Day
+  - M: Human Performance
+    - Slides: [PDF](includes/lectures/5-human-performance.pdf)
+    - Video: [YouTube](https://youtu.be/EZLw4AjXWOs)
+  - W: Task Analysis
+    - Slides: [PDF](includes/lectures/6-task-analysis.pdf)
+    - Video: [YouTube](https://youtu.be/5Hhq-J-KWq8)
 
 ---
 
 - Week 13: 3/31 - 4/04
-  - M: TBA
-    - Slides: TBA
+  - M: Task Analysis
+    - Slides: [PDF](includes/lectures/6-task-analysis.pdf)
+    - Video: [YouTube](https://youtu.be/5Hhq-J-KWq8)
   - W: Lab Day
 
 ---
