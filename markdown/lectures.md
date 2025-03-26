@@ -114,7 +114,9 @@ toc: false
   - M: Task Analysis
     - Slides: [PDF](includes/lectures/6-task-analysis.pdf)
     - Video: [YouTube](https://youtu.be/5Hhq-J-KWq8)
-  - W: Lab Day
+  - W: Personas and Storyboarding
+    - Slides: TBA
+    - Video: TBA
 
 ---
 
@@ -125,16 +127,22 @@ toc: false
 ---
 
 - Week 15: 4/21 - 4/24
-  - M: TBA
+  - M: Paper Prototyping
     - Slides: TBA
-  - W: Lab Day
+    - Video: TBA
+  - W: Testing 
+    - Slides: TBA
+    - Video: TBA
 
 ---
 
 - Week 16: 4/28 - 5/02
-  - M: TBA
+  - M: Accessibility
     - Slides: TBA
-  - W: Lab Day
+    - Video: TBA
+  - W: Patterns
+    - Slides: TBA
+    - Video: TBA
 
 ---
 
